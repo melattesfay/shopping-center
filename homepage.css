@@ -1,0 +1,29 @@
+body{
+    background-color:green;
+}
+#titles{
+    display:flex;
+    justify-content:inline;
+}
+#squareimage{
+    display:flex;
+    width:20%;
+    height:30%;
+}
+
+#cart{
+    width:20%;
+    height:15%;
+}
+#middle{
+    display:flex;
+    border: 5px red solid;
+
+}
+#tagline{
+    width:80%
+  background-color:blue;
+}
+#tag{
+    background-color:white;
+}
