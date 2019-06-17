@@ -4,6 +4,7 @@ body{
 #titles{
     display:flex;
     justify-content:inline;
+    background-color:#335b9b;
 }
 #squareimage{
     display:flex;
@@ -18,12 +19,10 @@ body{
 #middle{
     display:flex;
     border: 5px red solid;
+    background-color:red;
 
 }
-#tagline{
-    width:80%
-  background-color:blue;
-}
+
 #tag{
     background-color:white;
 }
