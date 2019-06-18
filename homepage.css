@@ -1,3 +1,4 @@
+
 body{
     background-color:green;
 }
@@ -26,3 +27,100 @@ body{
 #tag{
     background-color:white;
 }
+
+#imageee{
+    width:50%;
+    height:50%;
+
+}
+body{
+    background-color:grey;
+}
+
+#titles{
+    display:flex;
+    justify-content:center;
+    background-color:gold;
+
+}
+#squareimage{
+    display:flex;
+    width:4%;
+    height:5%;
+}
+
+#cart{
+    width:4%;
+    height:5%;
+
+}
+#middle{
+    display:flex;
+
+}
+#tag{
+    display:flex;
+ background-color:silver;
+ width:50%;
+
+}
+#imageshirt{
+    width:100%;
+}
+#imageiteams{
+    display:flex;
+    width:50%;
+    height:30%;
+    }
+#shopingitems{
+    width:100%;
+    height:30%;
+}
+#tagline{
+    display:flex;
+
+}
+.items{
+    display:flex;
+
+
+}
+
+.itemlist{
+    width:65%;
+    height:55%;
+    border:5px solid black;
+
+}
+#information{
+   display:flex;
+   background-color:rgba(189, 185, 185, 0.87);
+}
+.facebook{
+    width:120px;
+    height:74px;
+    border: 5px solid rgb(18, 18, 87);
+    margin-left:0%;
+}
+h2{
+
+    color:rgb(97, 26, 26);
+    font-size: 10px solid;
+    
+}
+#shoppingbags{
+    margin-left:30%;
+    width:50%;
+}
+#information{
+    border: 2px solid red;
+    margin-left:0%;
+}
+#contact{
+    border:4px solid green;
+    margin-right:100%;
+}
+#history{
+    margin-left:30%;
+}
+
