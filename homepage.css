@@ -1,28 +1,67 @@
-body{
-    background-color:green;
+#imageee{
+    width:50%;
+    height:50%;
+
 }
+body{
+    background-color:grey;
+}
+
 #titles{
     display:flex;
-    justify-content:inline;
-    background-color:#335b9b;
+    justify-content:center;
+    background-color:gold;
+
 }
 #squareimage{
     display:flex;
-    width:20%;
-    height:30%;
+    width:4%;
+    height:5%;
 }
 
 #cart{
-    width:20%;
-    height:15%;
+    width:4%;
+    height:5%;
+
 }
 #middle{
     display:flex;
+
     border: 5px red solid;
-    background-color:red;
 
 }
-
 #tag{
-    background-color:white;
+    display:flex;
+ background-color:silver;
+ width:50%;
+
+}
+#imageshirt{
+    width:100%;
+}
+#imageiteams{
+    display:flex;
+    width:50%;
+    height:30%;
+    }
+#shopingitems{
+    width:100%;
+    height:30%;
+}
+#tagline{
+    display:flex;
+
+}
+#items{
+    display:flex;
+
+}
+#shoe{
+    width:40%;
+    height:40%;
+}
+
+#sunglass{
+    width:40%;
+    height:40%;
 }
