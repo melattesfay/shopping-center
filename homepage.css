@@ -1,0 +1,28 @@
+body{
+    background-color:green;
+}
+#titles{
+    display:flex;
+    justify-content:inline;
+    background-color:#335b9b;
+}
+#squareimage{
+    display:flex;
+    width:20%;
+    height:30%;
+}
+
+#cart{
+    width:20%;
+    height:15%;
+}
+#middle{
+    display:flex;
+    border: 5px red solid;
+    background-color:red;
+
+}
+
+#tag{
+    background-color:white;
+}
