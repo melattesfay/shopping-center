@@ -67,7 +67,7 @@ $("#test4").click(function(){
 });*/
 
 
-function openForm() {
+function Form() {
   document.getElementById("myForm").style.display = "block";
    $("body").css("background-color", "grey");
 }
@@ -77,7 +77,7 @@ function closeForm() {
 }
 
 
-$(".open-button").click(function(){
+$(".text").click(function(){
 $("body").css("background-color", "grey");
 var x = document.getElementById("myDIV");
 
@@ -89,12 +89,15 @@ var x = document.getElementById("myDIV");
 });
 
 $("#close-button").click(function(){
+    $(".form-popup").hide();
+    $("myDIV").show();
 var x = document.getElementById("myDIV");
   if (x.style.display === "none") {
     x.style.display = "block";
   } else {
     x.style.display = "none";
   }
+
 });
 
 
