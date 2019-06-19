@@ -63,20 +63,19 @@ $("#test4").click(function(){
 });
 */
 
-    $("#testDiv").text("test");
-});
+  /*  $("#testDiv").text("test");
+});*/
 
 
 function openForm() {
   document.getElementById("myForm").style.display = "block";
-  $("#content").html(hide);
+   $("body").css("background-color", "grey");
 }
 
 function closeForm() {
-  document.getElementById("myDiv").style.display = "none";
-   document.getElementById$("myForm").style.display ="none";
- 
+  document.getElementById("myForm").style.display = "none";
 }
+
 
 $(".open-button").click(function(){
 $("body").css("background-color", "grey");
@@ -97,8 +96,5 @@ var x = document.getElementById("myDIV");
     x.style.display = "none";
   }
 });
-$("#close-button").click(function(){
-var y = document.getElementById("form-popup");
-  ("#myform").hide();
-});
+
 
