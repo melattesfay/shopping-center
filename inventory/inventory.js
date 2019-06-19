@@ -25,9 +25,13 @@ function getName(){
     });
 }
 
-$("#test").click(function(){
-    getName();
+function testingOnLoad(){
+    alert("hello");
+}
+window.onLoad = testingOnLoad;
 
+$("#test").click(function(){
+      getName();
 });
 
 $("#test3").click(function(){
@@ -36,14 +40,42 @@ $("#test3").click(function(){
 
 $("#test2").click(function(){
     testToAppendImg();
+
 });
 
 function testToAppendImg(){
+
+    $.ajax({
+        url: "../api/api.json",
+        method: "GET",
+        success: function(response){
+           /*
+           The problem with this code is that it works the first time the button is pressed but the second
+           time the button is pressed 2 imgs will be appended, not one. The reason for this is that the second
+           time the button is pressed the first line will work fine but the second line of code where the img
+           is appended to .imgDiv1, the img will also append to the first div we made when the button was first clicked.
+           since the 2 divs we made have the same class the img will append to the new div AND to the first div,
+           resulting in 3 imgs in 2 clicks
+
+            $(".content").append("<div class='imgDiv1'></div>");
+            $(".imgDiv1").append("<img class='items' src=" + response[0].image_url + ">")
+            $(".imgDiv1").append("<div class='overlay'></div>");
+            $(".overlay").append("<div class='text'> </div>");
+            $(".text").append("View Details"); */
+            $("#testDiv").text(response[0].image_url);
+
+        }
+
+    });
+
+
+/*
     $(".content").append("<div class='imgDiv1'></div>");
     $(".imgDiv").append("<img class='items' src=" + "https://images.ctfassets.net/2d5q1td6cyxq/2SqLXL2zJmcUUI2QSkUCy6/71701594cb1fdf6f2e60d34297262d6b/square.01.jpg" + ">")
     $(".imgDiv1").append("<div class='overlay'></div>");
     $(".overlay").append("<div class='text'> </div>");
     $(".text").append("View Details");
+    */
 }
 
 
@@ -63,10 +95,6 @@ $("#test4").click(function(){
 });
 */
 
-    $("#testDiv").text("test");
-});
-
-
 function openForm() {
   document.getElementById("myForm").style.display = "block";
   $("#content").html(hide);
@@ -75,7 +103,7 @@ function openForm() {
 function closeForm() {
   document.getElementById("myDiv").style.display = "none";
    document.getElementById$("myForm").style.display ="none";
- 
+
 }
 
 $(".open-button").click(function(){
