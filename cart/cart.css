@@ -11,6 +11,87 @@
 
 }
 
+#logo:hover{
+    width: 150px;
+    Height: 150px;
+    cursor: pointer;
+}
+
 #title{
     text-align: center;
+}
+
+#categories{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#name{
+    width: 50%;
+}
+
+#quantity{
+    width: 25%;
+    text-align: center;
+}
+
+#price{
+    width: 25%;
+    text-align: center;
+}
+
+#bottom{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+.name{
+    height: 20px;
+}
+
+.quantity{
+    height: 20px;
+    text-align: center;
+}
+
+.price{
+    height: 20px;
+    text-align: center;
+}
+#content{
+    display: flex;
+    height: 300px;
+    overflow-y: auto;
+}
+
+#nameCategory{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+#quantityCategory{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
+#priceCategory{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
+#input{
+    width: 20px;
+}
+#whitespace1{
+    width: 50%;
+}
+#whiteSpace2{
+    width: 25%;
+}
+#actuallContent{
+    width:25%;
 }

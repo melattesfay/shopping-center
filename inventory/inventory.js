@@ -1,3 +1,5 @@
+/*global $*/
+
 $("#cartBtn").click(function(){
     window.location = "cart.html";
 
@@ -7,13 +9,17 @@ $("#backBtn").click(function() {
     window.history.back();
 });
 
+$("#logo").click(function(){
+    window.location = "homepage.html";
+});
+
 function getName(){
-    var url = "https://c52otmsk20.execute-api.us-west-1.amazonaws.com/dev/inventory";
+
     $.ajax({
-        url: url,
+        url: "https://c52otmsk20.execute-api.us-west-1.amazonaws.com/dev/inventory",
         method: "GET",
         success: function(response){
-            $("#testDiv").append(response[0].name);
+            $("#testDiv").text(response.name);
         }
 
     });
@@ -22,4 +28,8 @@ function getName(){
 $("#test").click(function(){
     getName();
 
+});
+
+$("#test2").click(function(){
+    $("#testDiv").text("test");
 });
