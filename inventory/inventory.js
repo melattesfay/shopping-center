@@ -16,10 +16,10 @@ $("#logo").click(function(){
 function getName(){
 
     $.ajax({
-        url: "https://c52otmsk20.execute-api.us-west-1.amazonaws.com/dev/inventory",
+        url: "../api/api.json",
         method: "GET",
         success: function(response){
-            $("#testDiv").text(response.name);
+            $("#testDiv").text(response[0].name);
         }
 
     });
@@ -30,7 +30,39 @@ $("#test").click(function(){
 
 });
 
+$("#test3").click(function(){
+    $(".content").empty();
+});
+
 $("#test2").click(function(){
+    testToAppendImg();
+});
+
+function testToAppendImg(){
+    $(".content").append("<div class='imgDiv1'></div>");
+    $(".imgDiv").append("<img class='items' src=" + "https://images.ctfassets.net/2d5q1td6cyxq/2SqLXL2zJmcUUI2QSkUCy6/71701594cb1fdf6f2e60d34297262d6b/square.01.jpg" + ">")
+    $(".imgDiv1").append("<div class='overlay'></div>");
+    $(".overlay").append("<div class='text'> </div>");
+    $(".text").append("View Details");
+}
+
+
+/*var num = "0"
+function testId(){
+    var self = parseInt(num);
+    self = self + 1;
+    self = self.toString();
+    num = self;
+    console.log(num);
+
+}
+var stringTest = "#" + num;
+$("#test4").click(function(){
+    testId();
+    $("#testP").text(stringtest);
+});
+*/
+
     $("#testDiv").text("test");
 });
 
@@ -69,3 +101,4 @@ $("#close-button").click(function(){
 var y = document.getElementById("form-popup");
   ("#myform").hide();
 });
+
