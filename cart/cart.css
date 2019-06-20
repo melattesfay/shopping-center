@@ -33,7 +33,6 @@
 
 #quantity{
     width: 25%;
-    text-align: center;
 }
 
 #price{
@@ -52,7 +51,6 @@
 
 .quantity{
     height: 20px;
-    text-align: center;
 }
 
 .price{
@@ -94,4 +92,8 @@
 }
 #actuallContent{
     width:25%;
+}
+
+.quantityTest{
+    margin: 20px;
 }

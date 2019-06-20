@@ -1,0 +1,124 @@
+body{
+    background-color: #F2F2F2;
+}
+
+#top{
+    width: 100%;
+}
+
+#logo{
+    width: 50px;
+    height: 50px;
+}
+
+#divImg{
+    width: 50px;
+    height: 50px;
+    margin-right: auto;
+    margin-left: auto
+}
+
+#title{
+    text-align: center;
+}
+
+#main{
+    display: flex;
+    justify-content: space-between;
+    width: 1100px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#info{
+    width: 50%;
+    height: 500px;
+    border-radius: 4px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 2px 2px rgba(0, 0, 0, 0.1),
+    0px 0px 2px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.infoTitle{
+    margin-left: 30px;
+    padding: 5px;
+}
+
+#inputDiv1{
+    display: flex;
+    flex-direction: column;
+    width: 480px;
+    height: 112px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#nameInput{
+    width: 476px;
+    height: 56px;
+    margin: 2px;
+}
+
+#emailInput{
+    width: 476px;
+    height: 56px;
+    margin: 2px;
+}
+
+#inputDiv2{
+    display: flex;
+    flex-flow: row wrap;
+    width: 480px;
+    height: 120px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#cardInput{
+    width: 480px;
+    height: 52px;
+    margin: 2px;
+}
+
+#cvvInput{
+    width: 232px;
+    height: 48px;
+    margin-top: 2px;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+#dateInput{
+    width: 232px;
+    height: 48px;
+    margin-top: 2px;
+    margin-left: 2px;
+}
+
+
+#summary{
+    width: 500px;
+    height: 300px;
+    background-color: white;
+}
+#summaryTitle{
+    margin-left: 30px;
+    padding: 5px;
+}
+
+#itemsChosen{
+    width: 400px;
+    height: 80px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#underline{
+    width: 400px;
+    height: 1px;
+    background-color: #F0F1F2;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
