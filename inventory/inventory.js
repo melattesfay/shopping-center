@@ -15,6 +15,11 @@ $("#logo").click(function(){
 
 function getName(){
 
+    var data = getCatalog();
+    data.forEach(function(item) {
+        console.log(item.name);
+    });
+    /*
     $.ajax({
         url: "../api/api.json",
         method: "GET",
@@ -23,6 +28,7 @@ function getName(){
         }
 
     });
+    */
 }
 
 $("#test").click(function(){
