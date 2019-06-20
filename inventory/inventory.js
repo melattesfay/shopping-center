@@ -13,8 +13,13 @@ $("#logo").click(function(){
     window.location = "homepage.html";
 });
 
-function getName(){
 
+
+    var data = getCatalog();
+    data.forEach(function(item) {
+        console.log(item.name);
+    });
+    /*
     $.ajax({
         url: "../api/api.json",
         method: "GET",
@@ -23,6 +28,7 @@ function getName(){
         }
 
     });
+    */
 }
 
 function testingOnLoad(){
@@ -95,18 +101,30 @@ $("#test4").click(function(){
 });
 */
 
+
 function openForm() {
+
+  /*  $("#testDiv").text("test");
+});*/
+
+
+ function Form() {
   document.getElementById("myForm").style.display = "block";
-  $("#content").html(hide);
+   $("body").css("background-color", "grey");
+
 }
 
+
 function closeForm() {
+
   document.getElementById("myDiv").style.display = "none";
    document.getElementById$("myForm").style.display ="none";
 
+  document.getElementById("myForm").style.display = "none";
 }
 
-$(".open-button").click(function(){
+
+$(".text").click(function(){
 $("body").css("background-color", "grey");
 var x = document.getElementById("myDIV");
 
@@ -118,15 +136,29 @@ var x = document.getElementById("myDIV");
 });
 
 $("#close-button").click(function(){
+    $(".form-popup").hide();
+    $("myDIV").show();
 var x = document.getElementById("myDIV");
   if (x.style.display === "none") {
     x.style.display = "block";
   } else {
     x.style.display = "none";
   }
-});
-$("#close-button").click(function(){
-var y = document.getElementById("form-popup");
-  ("#myform").hide();
+
 });
 
+
+function getName(){
+
+    $.ajax({
+        url: "../api/api.json",
+        method: "GET",
+        success: function(response){
+            $("#testDiv").text(response[0].name[0]);
+
+
+
+        }
+
+    });
+}
