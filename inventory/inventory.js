@@ -14,7 +14,25 @@ $("#logo").click(function(){
 });
 
 
+<<<<<<< HEAD
 
+=======
+    var data = getCatalog();
+    data.forEach(function(item) {
+        console.log(item.name);
+    });
+    /*
+    $.ajax({
+        url: "../api/api.json",
+        method: "GET",
+        success: function(response){
+            $("#testDiv").text(response[0].name);
+        }
+
+    });
+    */
+}
+>>>>>>> d7378cc757f33d679fc261889f5336fd39ab6af0
 
 $("#test").click(function(){
     getName();
@@ -100,7 +118,7 @@ function getName(){
         url: "../api/api.json",
         method: "GET",
         success: function(response){
-            $("#testDiv").text(response[1].name + response[0].description + response[1].price + response[0].image_url );
+            $("#testDiv").text(response[0].name[0]);
 
 
 
