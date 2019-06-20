@@ -13,17 +13,8 @@ $("#logo").click(function(){
     window.location = "homepage.html";
 });
 
-function getName(){
 
-    $.ajax({
-        url: "../api/api.json",
-        method: "GET",
-        success: function(response){
-            $("#testDiv").text(response[0].name);
-        }
 
-    });
-}
 
 $("#test").click(function(){
     getName();
@@ -67,10 +58,12 @@ $("#test4").click(function(){
 });*/
 
 
-function Form() {
+ function Form() {
   document.getElementById("myForm").style.display = "block";
    $("body").css("background-color", "grey");
+
 }
+
 
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
@@ -101,3 +94,17 @@ var x = document.getElementById("myDIV");
 });
 
 
+function getName(){
+
+    $.ajax({
+        url: "../api/api.json",
+        method: "GET",
+        success: function(response){
+            $("#testDiv").text(response[1].name + response[0].description + response[1].price + response[0].image_url );
+
+
+
+        }
+
+    });
+}
