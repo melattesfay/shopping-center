@@ -55,6 +55,8 @@ function testToAppendImg(){
         url: "../api/api.json",
         method: "GET",
         success: function(response){
+            // empty the div before appending
+            $('content').empty();
            /*
            The problem with this code is that it works the first time the button is pressed but the second
            time the button is pressed 2 imgs will be appended, not one. The reason for this is that the second
