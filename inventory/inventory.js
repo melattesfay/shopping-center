@@ -29,12 +29,6 @@ $("#logo").click(function(){
 
     });
     */
-}
-
-function testingOnLoad(){
-    alert("hello");
-}
-window.onLoad = testingOnLoad;
 
 $("#test").click(function(){
       getName();
@@ -55,24 +49,26 @@ function testToAppendImg(){
         url: "../api/api.json",
         method: "GET",
         success: function(response){
+
+            $(".content").empty();
            /*
            The problem with this code is that it works the first time the button is pressed but the second
            time the button is pressed 2 imgs will be appended, not one. The reason for this is that the second
            time the button is pressed the first line will work fine but the second line of code where the img
            is appended to .imgDiv1, the img will also append to the first div we made when the button was first clicked.
            since the 2 divs we made have the same class the img will append to the new div AND to the first div,
-           resulting in 3 imgs in 2 clicks
+           resulting in 3 imgs in 2 clicks*/
 
             $(".content").append("<div class='imgDiv1'></div>");
             $(".imgDiv1").append("<img class='items' src=" + response[0].image_url + ">")
             $(".imgDiv1").append("<div class='overlay'></div>");
             $(".overlay").append("<div class='text'> </div>");
-            $(".text").append("View Details"); */
-            $("#testDiv").text(response[0].image_url);
+            $(".text").append("View Details");
 
         }
 
     });
+}
 
 
 /*
@@ -82,7 +78,6 @@ function testToAppendImg(){
     $(".overlay").append("<div class='text'> </div>");
     $(".text").append("View Details");
     */
-}
 
 
 /*var num = "0"
@@ -103,9 +98,15 @@ $("#test4").click(function(){
 
 
 function openForm() {
+function Form() {
+  document.getElementById("myForm").style.display = "block";
+  $("#content").html(hide);
+   $("body").css("background-color", "grey");
 
   /*  $("#testDiv").text("test");
 });*/
+}
+}
 
 
  function Form() {
