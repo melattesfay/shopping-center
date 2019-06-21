@@ -20,20 +20,30 @@
             <h2 class="infoTitle"> Payment Details </h2>
             <h3 class="infoTitle"> Your Information </h3>
             <div id="inputDiv1">
-                <input id="nameInput" placeholder="Full Name">
-                <input id="emailInput" placeholder="Email">
+                <input id="nameInput" placeholder="Full Name" required >
+                <input id="emailInput" placeholder="Email" required>
             </div>
             <h3 class="infoTitle"> Card Details </h3>
             <div id="inputDiv2">
-                <input id="cardInput" placeholder="Card Number">
-                <input id="cvvInput" placeholder="CVV">
-                <input id="dateInput" placeholder="MM/YY">
+                <input id="cardInput" placeholder="Card Number" required>
+                <input id="cvvInput" placeholder="CVV" required>
+                <input id="dateInput" placeholder="MM/YY" required>
             </div>
+              <button type="submit" class="btn">checkout</button>
 
+  </form>
         </div>
 
         <div id="summary">
             <h2 id="summaryTitle"> Order Summary </h2>
+            <div class="imgDiv1">
+                <img class="itemTwo">
+            </div>
+
+            <h3 id="itemName1"> </h3>
+            <h3 id="itemName2"> </h3>
+            <h3 id="itemName3"> </h3>
+            <img src id="itemName4"> </h3>
             <div id="itemsChosen">
 
             </div>
@@ -43,14 +53,16 @@
 
 
     </div>
-
-
+<div id="finding">
+    </div>
+  <button id="test"> Testing</button>
 
 
 
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../api/mock.js"></script>
     <script src="payment.js"></script>
 </body>
 
