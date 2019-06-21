@@ -14,11 +14,11 @@ $("#logo").click(function(){
 });
 
 
-
-    var data = getCatalog();
+  var data = getCatalog();
     data.forEach(function(item) {
         console.log(item.name);
     });
+
     /*
     $.ajax({
         url: "../api/api.json",
@@ -122,8 +122,7 @@ function closeForm() {
 
   document.getElementById("myDiv").style.display = "none";
    document.getElementById$("myForm").style.display ="none";
-
-  document.getElementById("myForm").style.display = "none";
+ $("body").css("background-color", "white");
 }
 
 
@@ -141,6 +140,7 @@ var x = document.getElementById("myDIV");
 $("#close-button").click(function(){
     $(".form-popup").hide();
     $("myDIV").show();
+     $("body").css("background-color", "white");
 var x = document.getElementById("myDIV");
   if (x.style.display === "none") {
     x.style.display = "block";
@@ -151,17 +151,3 @@ var x = document.getElementById("myDIV");
 });
 
 
-function getName(){
-
-    $.ajax({
-        url: "../api/api.json",
-        method: "GET",
-        success: function(response){
-            $("#testDiv").text(response[0].name[0]);
-
-
-
-        }
-
-    });
-}
