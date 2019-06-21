@@ -5,10 +5,6 @@ $("#cartBtn").click(function(){
 
 });
 
-$("#backBtn").click(function() {
-    window.history.back();
-});
-
 $("#logo").click(function(){
     window.location = "homepage.html";
 });
