@@ -1,30 +1,22 @@
 /*global $*/
 
 $("#cartBtn").click(function(){
-    window.location = "cart.html";
+    window.location = "../cart/cart.html";
 
 });
 
 $("#logo").click(function(){
-    window.location = "homepage.html";
+    window.location = "../homepage.html";
 });
 
+$("#addCart").click(function(){
+    window.location = "../cart/cart.html"
+});
 
   var data = getCatalog();
     data.forEach(function(item) {
         console.log(item.name);
     });
-
-    /*
-    $.ajax({
-        url: "../api/api.json",
-        method: "GET",
-        success: function(response){
-            $("#testDiv").text(response[0].name);
-        }
-
-    });
-    */
 
 
 $("#test3").click(function(){
@@ -36,8 +28,8 @@ $("#test2").click(function(){
 
 });
 
-function testToAppendImg(){
-
+window.onload = function testToAppendImg(){
+    $(".content").empty();
     $.ajax({
         url: "../api/api.json",
         method: "GET",
@@ -50,17 +42,7 @@ function testToAppendImg(){
 
 
 
-
-
-        });
-
-            /*
-            $(".content").append("<div class='imgDiv1'></div>");
-            $(".imgDiv1").append("<img class='items' src=" + response[0].image_url + ">")
-            $(".imgDiv1").append("<div class='overlay'></div>");
-            $(".overlay").append("<div class='text'> </div>");
-            $(".text").append("View Details");
-            */
+            });
         }
 
     });
@@ -72,9 +54,6 @@ function Form() {
     $("#myForm").css("display", "block");
     $("#myForm").show();
 }
-
-
-
 $(".text").click(function(){
     Form();
 });

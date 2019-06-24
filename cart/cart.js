@@ -1,23 +1,15 @@
 $("#backBtn").click(function(){
     window.history.back();
 });
-/*var currentVal = 1;
-$("button").click(function(){
-    currentVal = currentVal + 1;
-    $("input").val(currentVal);
+
+$("#logo").click(function(){
+    window.location = "../homepage.html";
 });
 
-$("").click(function(){
-    currentVal = currentVal - 1;
-
-
-    $("input").val(currentVal);
+$("#checkout").click(function(){
+    window.location = "../payment/payment.html"
 });
-*/
 
-/*
-Need this function to work when "add to cart" button is pressed in the inventory page
-*/
 $("#testingBtn").click(function(){
     $("#nameCategory").empty();
     $("#quantityCategory").empty();
@@ -28,7 +20,10 @@ $("#testFunction").click(function(){
     makeNewDiv();
 });
 
-function makeNewDiv(){
+window.onload = function makeNewDiv(){
+    $("#nameCategory").empty();
+    $("#quantityCategory").empty();
+    $("#priceCategory").empty();
     $.ajax({
         url: "../api/api.json",
         method: "GET",
@@ -45,11 +40,13 @@ function makeNewDiv(){
                 $("#" + item.name + "Plus").click(function(){
                     currentVal = currentVal + 1;
                 $("#" + item.name + "Input").val(currentVal);
+                $("#numOfQuan").text(currentVal);
                 });
 
                 $("#" + item.name + "Minus").click(function(){
                     currentVal = currentVal - 1;
                 $("#" + item.name + "Input").val(currentVal);
+                $("#numOfQuan").text(currentVal);
                 });
             });
 
@@ -58,14 +55,8 @@ function makeNewDiv(){
     });
 }
 
-var x=price;
-var z= x * 2;
-
-document.getElementById("totalNum").innerHTML = z;
 
 
-/*
-*/
 
 $("#delete1").click(function(){
   $("#lineFirst").remove();
