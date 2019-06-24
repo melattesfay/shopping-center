@@ -128,8 +128,8 @@ Modal and Tranparency ends header
 }
 
 /* The popup form - hidden by default */
-.form-popup {
 
+.form-popup{
   display: none;
   position: center;
   bottom: 0;
@@ -138,13 +138,15 @@ Modal and Tranparency ends header
   margin-top:12%;
   border: 3px solid #f1f1f1;
   z-index: 9;
+    width: 300px;
 }
 
 
 .form-container {
   max-width: 300px;
   padding: 10px;
-  background-color: white;
+  background-color: green;
+
 }
 
 
