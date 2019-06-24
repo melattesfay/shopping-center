@@ -10,11 +10,11 @@ $("#logo").click(function(){
 });
 
 
-
-    var data = getCatalog();
+  var data = getCatalog();
     data.forEach(function(item) {
         console.log(item.name);
     });
+
     /*
     $.ajax({
         url: "../api/api.json",
@@ -74,6 +74,7 @@ function Form() {
 }
 
 
+
 $(".text").click(function(){
     Form();
 });
@@ -84,3 +85,4 @@ $("#close-button").click(function(){
     $("#myDIV").show();
 
 });
+
