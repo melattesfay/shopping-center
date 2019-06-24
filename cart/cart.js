@@ -52,15 +52,24 @@ function makeNewDiv(){
                 $("#" + item.name + "Input").val(currentVal);
                 });
             });
-             
+
         }
 
     });
 }
 
+var x=price;
+var z= x * 2;
 
+document.getElementById("totalNum").innerHTML = z;
 
 
 /*
 */
 
+$("#delete1").click(function(){
+  $("#lineFirst").remove();
+  $("#firstLine2").remove();
+  $("#firstLine3").remove();
+  $("#delete1").remove();
+});

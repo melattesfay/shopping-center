@@ -147,3 +147,15 @@ var x = document.getElementById("myDIV");
 });
 
 
+/*("#addCart").click(function(){
+   $.ajax({
+        url: "../api/api.json",
+        method: "GET",
+        success: function(response){
+         (body).append()
+
+           $(".name").append(response[0].variations[2].name);
+           $(".name").append(response[0].variations[2].price);
+
+*/
+$(gp url 3000)my/path/cart.html

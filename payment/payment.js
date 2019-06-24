@@ -16,7 +16,7 @@ $("#test").click(function(){
 
             $("#itemName4").text(response[0].description);
             $(".imgDiv1").append("<img class='itemTwo' src=" + response[0].image_url + ">")
-            $("#itemName3").text(response[0].name);
+            $("#itemName3").text(response[0].variations[2].name);
             $("#itemName1").text(response[0].variations[2].price);
 
 

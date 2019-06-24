@@ -9,15 +9,18 @@
     <div id="modalWraper">
         <div id="transperancy">
             <div id="modal">
-
             </div>
         </div>
     </div>
 
     <div id="top">
         <button id="backBtn" onclick="window.location.href = 'homepage.html';"> Back </button>
-        <button id="cartBtn"> Cart </button>
+
+       <ul>
+        <ol id="cartBtn"><a href="../cart/cart.html">next</a></ol>
+        </ul>
     </div>
+
     <div class="header">
         <img id="logo" src="https://images.ctfassets.net/2d5q1td6cyxq/2SqLXL2zJmcUUI2QSkUCy6/71701594cb1fdf6f2e60d34297262d6b/square.01.jpg">
     </div>
@@ -111,12 +114,15 @@
     <h1> Shoes </h1>
     <h5>$12</h5>
     <h5> We could add more information </h5>
-
+    <button id="addCart"> add to cart </button>
 </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../api/mock.js"></script>
     <script src="inventory.js"></script>
+    <srcrip src="../cart/cart.html"></script>
+    <srcrip src="../cart/cart.js"></script>
+    <srcrip src="../cart/cart.css"></script>
 </body>
 
 </html>
