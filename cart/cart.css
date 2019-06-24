@@ -45,9 +45,6 @@
     justify-content: flex-end;
     flex-direction: column;
 }
-.name{
-    height: 20px;
-}
 
 .quantity{
     height: 20px;
@@ -81,7 +78,7 @@
     width: 25%;
 }
 
-#input{
+input{
     width: 20px;
 }
 #whitespace1{
@@ -95,5 +92,5 @@
 }
 
 .quantityTest{
-    margin: 20px;
+    margin: 18px;
 }
