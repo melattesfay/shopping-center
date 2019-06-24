@@ -26,9 +26,6 @@ $("#logo").click(function(){
     });
     */
 
-$("#test").click(function(){
-      getName();
-});
 
 $("#test3").click(function(){
     $(".content").empty();
@@ -45,117 +42,47 @@ function testToAppendImg(){
         url: "../api/api.json",
         method: "GET",
         success: function(response){
+            response.forEach(function(item){
+            $(".content").append("<div class='imgDiv1' id='" + item.name + "Container'></div");
+            $("#" + item.name + "Container").append("<img class='items' id='" + item.name + "Img' src='" + item.image_url + "'>");
+            $("#" + item.name + "Container").append("<div class='overlay' id='" + item.name + "Overlay'></div");
+            $("#" + item.name + "Overlay").append("<div class='text' id='" + item.name + "Text'>" + "View Details" + "</div>");
 
 
-            // empty the div before appending
-            $('content').empty();
-           /*
-           The problem with this code is that it works the first time the button is pressed but the second
-           time the button is pressed 2 imgs will be appended, not one. The reason for this is that the second
-           time the button is pressed the first line will work fine but the second line of code where the img
-           is appended to .imgDiv1, the img will also append to the first div we made when the button was first clicked.
-           since the 2 divs we made have the same class the img will append to the new div AND to the first div,
-           resulting in 3 imgs in 2 clicks*/
 
+
+
+        });
+
+            /*
             $(".content").append("<div class='imgDiv1'></div>");
             $(".imgDiv1").append("<img class='items' src=" + response[0].image_url + ">")
             $(".imgDiv1").append("<div class='overlay'></div>");
             $(".overlay").append("<div class='text'> </div>");
             $(".text").append("View Details");
-
+            */
         }
 
     });
 }
 
 
-/*
-    $(".content").append("<div class='imgDiv1'></div>");
-    $(".imgDiv").append("<img class='items' src=" + "https://images.ctfassets.net/2d5q1td6cyxq/2SqLXL2zJmcUUI2QSkUCy6/71701594cb1fdf6f2e60d34297262d6b/square.01.jpg" + ">")
-    $(".imgDiv1").append("<div class='overlay'></div>");
-    $(".overlay").append("<div class='text'> </div>");
-    $(".text").append("View Details");
-    */
-
-
-/*var num = "0"
-function testId(){
-    var self = parseInt(num);
-    self = self + 1;
-    self = self.toString();
-    num = self;
-    console.log(num);
-
-}
-var stringTest = "#" + num;
-$("#test4").click(function(){
-    testId();
-    $("#testP").text(stringtest);
-});
-*/
-
-
-function openForm() {
 function Form() {
-  document.getElementById("myForm").style.display = "block";
-  $("#content").html(hide);
-   $("body").css("background-color", "grey");
-
-  /*  $("#testDiv").text("test");
-});*/
-}
+    $("#myDIV").hide();
+    $("#myForm").css("display", "block");
+    $("#myForm").show();
 }
 
-
- function Form() {
-  document.getElementById("myForm").style.display = "block";
-   $("body").css("background-color", "grey");
-
-}
-
-
-function closeForm() {
-
-  document.getElementById("myDiv").style.display = "none";
-   document.getElementById$("myForm").style.display ="none";
- $("body").css("background-color", "white");
-}
 
 
 $(".text").click(function(){
-$("body").css("background-color", "grey");
-var x = document.getElementById("myDIV");
-
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
+    Form();
 });
 
 $("#close-button").click(function(){
-    $(".form-popup").hide();
-    $("myDIV").show();
-     $("body").css("background-color", "white");
-var x = document.getElementById("myDIV");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
+    $("body").css("background", "white");
+    $("#myForm").hide();
+    $("#myDIV").show();
 
 });
 
-
-/*("#addCart").click(function(){
-   $.ajax({
-        url: "../api/api.json",
-        method: "GET",
-        success: function(response){
-         (body).append()
-
-           $(".name").append(response[0].variations[2].name);
-           $(".name").append(response[0].variations[2].price);
-
-*/
-$(gp url 3000)my/path/cart.html
