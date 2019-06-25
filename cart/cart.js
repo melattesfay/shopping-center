@@ -1,23 +1,15 @@
 $("#backBtn").click(function(){
     window.history.back();
 });
-/*var currentVal = 1;
-$("button").click(function(){
-    currentVal = currentVal + 1;
-    $("input").val(currentVal);
+
+$("#logo").click(function(){
+    window.location = "../homepage.html";
 });
 
-$("").click(function(){
-    currentVal = currentVal - 1;
-
-
-    $("input").val(currentVal);
+$("#checkout").click(function(){
+    window.location = "../payment/payment.html"
 });
-*/
 
-/*
-Need this function to work when "add to cart" button is pressed in the inventory page
-*/
 $("#testingBtn").click(function(){
     $("#nameCategory").empty();
     $("#quantityCategory").empty();
@@ -28,11 +20,17 @@ $("#testFunction").click(function(){
     makeNewDiv();
 });
 
-function makeNewDiv(){
+
+window.onload = function makeNewDiv(){
+    $("#nameCategory").empty();
+    $("#quantityCategory").empty();
+    $("#priceCategory").empty();
     $.ajax({
         url: "../api/api.json",
         method: "GET",
         success: function(response){
+            var numOfItems = response.length;
+            $("#numOfQuan").append(numOfItems);
             response.forEach(function(item){
                 $("#nameCategory").append("<h3 id=" + item.name + ">" + item.name + "</h3>");
                 $("#" + item.name).css("color", "red");
@@ -40,32 +38,45 @@ function makeNewDiv(){
                 $("#" + item.name + "Div").append("<button id='" + item.name + "Minus'>" + "-" + "</button>");
                 $("#" + item.name + "Div").append("<input value='1' id='" + item.name + "Input'>");
                 $("#" + item.name + "Div").append("<button id='" + item.name + "Plus'>" + "+" + "</button>");
-                $("#priceCategory").append("<h3 id='" + item.name + "Price' class='price'>" + item.variations[0].price + "</h3>");
-                var currentVal = 1;
+                var price = item.variations[0].price;
+                $("#priceCategory").append("<h3 id='" + item.name + "Price' class='price'>" + price + "</h3>");
+                $("#numOfTotal").append(price);
+                var currentNum = 1;
                 $("#" + item.name + "Plus").click(function(){
-                    currentVal = currentVal + 1;
-                $("#" + item.name + "Input").val(currentVal);
+                    numOfItems = numOfItems + 1;
+                    currentNum = currentNum + 1;
+                    price = price + item.variations[0].price;
+                    $("#" + item.name + "Input").val(currentNum);
+                    $("#numOfQuan").empty();
+                    $("#" + item.name + "Price").empty();
+                    $("#numOfTotal").empty();
+                    $("#numOfQuan").append(numOfItems);
+                    $("#" + item.name + "Price").append(price);
+                    $("#numOfTotal").append(price)
                 });
 
                 $("#" + item.name + "Minus").click(function(){
-                    currentVal = currentVal - 1;
-                $("#" + item.name + "Input").val(currentVal);
+                    numOfItems = numOfItems - 1;
+                    currentNum = currentNum - 1;
+                    price = price - item.variations[0].price;
+                    $("#" + item.name + "Input").val(currentNum);
+                    $("#numOfQuan").empty();
+                    $("#" + item.name + "Price").empty();
+                    $("#numOfQuan").append(numOfItems);
+                    $("#" + item.name + "Price").append(price);
                 });
+
+
             });
+
+
 
         }
 
     });
 }
 
-var x=price;
-var z= x * 2;
 
-document.getElementById("totalNum").innerHTML = z;
-
-
-/*
-*/
 
 $("#delete1").click(function(){
   $("#lineFirst").remove();
