@@ -20,6 +20,7 @@ $("#testFunction").click(function(){
     makeNewDiv();
 });
 
+
 window.onload = function makeNewDiv(){
     $("#nameCategory").empty();
     $("#quantityCategory").empty();
@@ -28,6 +29,8 @@ window.onload = function makeNewDiv(){
         url: "../api/api.json",
         method: "GET",
         success: function(response){
+            var numOfItems = response.length;
+            $("#numOfQuan").append(numOfItems);
             response.forEach(function(item){
                 $("#nameCategory").append("<h3 id=" + item.name + ">" + item.name + "</h3>");
                 $("#" + item.name).css("color", "red");
@@ -35,26 +38,43 @@ window.onload = function makeNewDiv(){
                 $("#" + item.name + "Div").append("<button id='" + item.name + "Minus'>" + "-" + "</button>");
                 $("#" + item.name + "Div").append("<input value='1' id='" + item.name + "Input'>");
                 $("#" + item.name + "Div").append("<button id='" + item.name + "Plus'>" + "+" + "</button>");
-                $("#priceCategory").append("<h3 id='" + item.name + "Price' class='price'>" + item.variations[0].price + "</h3>");
-                var currentVal = 1;
+                var price = item.variations[0].price;
+                $("#priceCategory").append("<h3 id='" + item.name + "Price' class='price'>" + price + "</h3>");
+                $("#numOfTotal").append(price);
+                var currentNum = 1;
                 $("#" + item.name + "Plus").click(function(){
-                    currentVal = currentVal + 1;
-                $("#" + item.name + "Input").val(currentVal);
-                $("#numOfQuan").text(currentVal);
+                    numOfItems = numOfItems + 1;
+                    currentNum = currentNum + 1;
+                    price = price + item.variations[0].price;
+                    $("#" + item.name + "Input").val(currentNum);
+                    $("#numOfQuan").empty();
+                    $("#" + item.name + "Price").empty();
+                    $("#numOfTotal").empty();
+                    $("#numOfQuan").append(numOfItems);
+                    $("#" + item.name + "Price").append(price);
+                    $("#numOfTotal").append(price)
                 });
 
                 $("#" + item.name + "Minus").click(function(){
-                    currentVal = currentVal - 1;
-                $("#" + item.name + "Input").val(currentVal);
-                $("#numOfQuan").text(currentVal);
+                    numOfItems = numOfItems - 1;
+                    currentNum = currentNum - 1;
+                    price = price - item.variations[0].price;
+                    $("#" + item.name + "Input").val(currentNum);
+                    $("#numOfQuan").empty();
+                    $("#" + item.name + "Price").empty();
+                    $("#numOfQuan").append(numOfItems);
+                    $("#" + item.name + "Price").append(price);
                 });
+
+
             });
+
+
 
         }
 
     });
 }
-
 
 
 

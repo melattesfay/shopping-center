@@ -11,6 +11,12 @@ body{
     height: 50px;
 }
 
+#logo:hover{
+    cursor: pointer;
+    height: 70px;
+    width: 70px;
+}
+
 #divImg{
     width: 50px;
     height: 50px;
@@ -108,10 +114,15 @@ body{
 }
 
 #itemsChosen{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
     width: 400px;
     height: 80px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+    border: 2px solid red;
 }
 
 #underline{
@@ -126,4 +137,17 @@ body{
     width:13%;
     height:10%;
 
+}
+
+.summaryImg{
+    width: 80px;
+    height: 80px;
+}
+#itemName1{
+    margin-top: 30px;
+}
+
+#itemName2{
+    margin-top: 30px;
+    margin-right: 30px;
 }
