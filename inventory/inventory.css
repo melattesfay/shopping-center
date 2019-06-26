@@ -110,10 +110,11 @@ Modal and Transparency starts header
 /*
 Modal and Tranparency ends header
 */
-#popupimage1{
-    width:30px;
-    height:25px;
+.popupimage1{
+    width: 200px;
+    height:300px;
 }
+
 .open-button {
   background-color: black;
   color: white;
@@ -136,16 +137,17 @@ Modal and Tranparency ends header
   margin-left: 35%;
   margin-right:40%;
   margin-top:12%;
-  border: 3px solid #f1f1f1;
   z-index: 9;
-    width: 300px;
+  width: 450px;
 }
 
 
 .form-container {
-  max-width: 300px;
+  width: 430px;
   padding: 10px;
-  background-color: green;
+  background-color: #C0C0C0	;
+  display: flex;
+  flex-direction: row;
 
 }
 
@@ -158,4 +160,11 @@ Modal and Tranparency ends header
 }
 #popup{
     display:flex;
+    width: 50%;
+}
+
+#info{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
 }
