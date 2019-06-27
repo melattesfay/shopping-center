@@ -60,3 +60,24 @@ $("#close-button").click(function(){
 
 });
 
+/*
+testing localStorage
+*/
+
+$("#addCart").click(function(){
+    $.ajax({
+        url: "../api/api.json",
+        method: "GET",
+        success: function(response){
+            localStorage.setItem("itemName", response[0].name);
+            
+        
+        }
+
+    });
+});
+
+
+
+/*
+*/

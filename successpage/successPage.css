@@ -33,15 +33,25 @@ h1{
     position:Center;
     margin-right:5px;
 }
-button{
+#continueShop{
     color:white;
     margin-left: 45%;
-
     position:center;
     background-color:blue;
-   padding:1%;
+    padding:1%;
+}
+
+#continueShop:hover{
+    cursor: pointer;
+}
+
+#continueShop:active{
+    background: rgb(66, 135, 245)
 
 }
+
+
+
 #imageholder{
     width:20%;
     height:12%;

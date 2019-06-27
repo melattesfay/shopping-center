@@ -21,7 +21,7 @@ window.onload = function makeNewDiv(){
         success: function(response){
             var numOfItems = response.length;
             var prices = [];
-        
+            $("#content").append(localStorage.getItem("itemName"));
             var totalPrice = 0;
             var itemIndex = [];
             function updateTotalPrice(){
