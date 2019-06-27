@@ -19,7 +19,9 @@ $("#testingBtn").click(function(){
 $("#testFunction").click(function(){
     makeNewDiv();
 });
-
+$("#checkout").click(function(){
+    
+});
 
 window.onload = function makeNewDiv(){
     $("#nameCategory").empty();
@@ -33,6 +35,7 @@ window.onload = function makeNewDiv(){
             $("#numOfQuan").append(numOfItems);
             response.forEach(function(item){
                 $("#nameCategory").append("<h3 id=" + item.name + ">" + item.name + "</h3>");
+                   $("#demo").append("<h3 id=" + item.name + ">" + item.name + "</h3>");
                 $("#" + item.name).css("color", "red");
                 $("#quantityCategory").append("<div id='" + item.name + "Div' " + "class='quantityTest'></div>");
                 $("#" + item.name + "Div").append("<button id='" + item.name + "Minus'>" + "-" + "</button>");
