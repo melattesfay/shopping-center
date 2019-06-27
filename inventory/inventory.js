@@ -9,24 +9,10 @@ $("#logo").click(function(){
     window.location = "../homepage.html";
 });
 
-$("#addCart").click(function(){
-    window.location = "../cart/cart.html"
-});
-
   var data = getCatalog();
     data.forEach(function(item) {
         console.log(item.name);
     });
-
-
-$("#test3").click(function(){
-    $(".content").empty();
-});
-
-$("#test2").click(function(){
-    testToAppendImg();
-
-});
 
 window.onload = function testToAppendImg(){
     $(".content").empty();
@@ -39,7 +25,14 @@ window.onload = function testToAppendImg(){
             $("#" + item.name + "Container").append("<img class='items' id='" + item.name + "Img' src='" + item.image_url + "'>");
             $("#" + item.name + "Container").append("<div class='overlay' id='" + item.name + "Overlay'></div");
             $("#" + item.name + "Overlay").append("<div class='text' id='" + item.name + "Text'>" + "View Details" + "</div>");
-
+            $("#" + item.name + "Text").click(function(){
+                Form();
+                $("#popup").empty();
+                $("#popup").append("<img class='popupimage1' src=" + item.image_url + ">");
+                $("#itemName").text(item.name);
+                $("#itemPrice").text(item.variations[0].name + ": " + "$" + item.variations[0].price);
+                $("#itemDesc").text(item.description);
+            });
 
 
             });
@@ -53,6 +46,8 @@ function Form() {
     $("#myDIV").hide();
     $("#myForm").css("display", "block");
     $("#myForm").show();
+    $("body").css("background", "rgba(0, 0, 0, 0.8)");
+
 }
 $(".text").click(function(){
     Form();
