@@ -21,7 +21,6 @@ window.onload = function makeNewDiv(){
         success: function(response){
             var numOfItems = response.length;
             var prices = [];
-            $("#content").append(localStorage.getItem("itemName"));
             var totalPrice = 0;
             var itemIndex = [];
             function updateTotalPrice(){
@@ -101,3 +100,28 @@ $("#delete1").click(function(){
   $("#delete1").remove();
 });
 
+/*
+moving data tests
+*/
+/*
+function getData(){
+    $.ajax({
+        url: "../api/api.json",
+        method: "GET",
+        success: function(response){
+            if(local.Storage.getItem("clicked") === true){
+                $("#content").append(localStorage.getItem("name"));
+            }else if(localStorage.getItem("clicked") === false){
+                $("#content").append("False");
+            }
+
+        }
+
+    });
+}
+*/
+
+
+
+/*
+*/
