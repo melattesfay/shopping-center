@@ -13,6 +13,12 @@
     margin-right: auto;
 
 }
+#shoppingCart{
+    display:flex;
+}
+#demo{
+    padding:40px;
+}
 
 #logo:hover{
     width: 150px;
