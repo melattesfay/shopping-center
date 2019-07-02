@@ -125,3 +125,28 @@ var friesPrice = [];
  });
  }
 
+/*
+moving data tests
+*/
+/*
+function getData(){
+    $.ajax({
+        url: "../api/api.json",
+        method: "GET",
+        success: function(response){
+            if(local.Storage.getItem("clicked") === true){
+                $("#content").append(localStorage.getItem("name"));
+            }else if(localStorage.getItem("clicked") === false){
+                $("#content").append("False");
+            }
+
+        }
+
+    });
+}
+*/
+
+
+
+/*
+*/
