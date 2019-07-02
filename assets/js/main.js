@@ -1,5 +1,11 @@
+function myFunction() {
+  var x = document.data-price[0].innerHTML;
+  document.getElementById("demo").innerHTML = x;
 
-			// update product quantity inside cart
+}
+
+
+        	// update product quantity inside cart
 			/*cart[0].addEventListener('change', function(event) {
 				if(event.target.tagName.toLowerCase() == 'select') quickUpdateCart();
 			});

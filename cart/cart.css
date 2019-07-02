@@ -2,13 +2,22 @@
     display: flex;
     flex-direction: column;
 }
-
+#backBtn{
+    width:32px;
+    height:32px;
+}
 #logo{
     width: 100px;
     height: 100px;
     margin-left: auto;
     margin-right: auto;
 
+}
+#shoppingCart{
+    display:flex;
+}
+#demo{
+    padding:40px;
 }
 
 #logo:hover{
