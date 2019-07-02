@@ -143,7 +143,7 @@ $("#addCart").click(function(){
 
     });
 });
-*/
+
 
 
 /*

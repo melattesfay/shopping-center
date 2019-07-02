@@ -6,6 +6,7 @@
     width:32px;
     height:32px;
 }
+
 #logo{
     width: 100px;
     height: 100px;
@@ -116,3 +117,25 @@ input{
     width:25%;
     height:8%;
 }
+
+/* 
+
+*/
+
+#wraper{
+    display:flex;
+}
+
+.minus {
+    display:flex;
+    margin-left:100%;
+}
+
+.price {
+    margin-left:75%;
+}
+
+/*
+
+
+ */

@@ -1,3 +1,4 @@
+
 /*$("#backBtn").click(function(){
     window.history.back();
 });
@@ -10,7 +11,7 @@ $("#checkout").click(function(){
     window.location = "../payment/payment.html";
 });
 */
-
+/*
 window.onload = function makeNewDiv(){
     $("#nameCategory").empty();
     $("#quantityCategory").empty();
@@ -97,7 +98,7 @@ window.onload = function makeNewDiv(){
   $("#delete1").remove();
 });
 */
-
+/*
 var burgerPrice = [];
 var friesPrice = [];
 
@@ -150,3 +151,26 @@ function getData(){
 
 /*
 */
+
+function newDive(){
+
+var newTestDiv = $("<div class='wrapper'> </div>");
+    newTestDiv.append("<h1 class='name'> </h1>");
+    newTestDiv.append("<button class='minus'> </button>");
+    newTestDiv.append("<input class='quantity'> </input>");
+    newTestDiv.append("<button  class='plus'> </button>");
+    newTestDiv.append("<h1class='price'> </h1>");
+
+
+}
+
+
+
+
+
+
+
+/* 
+
+*/
+
