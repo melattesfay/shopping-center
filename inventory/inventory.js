@@ -23,6 +23,15 @@ function onClick() {
         console.log(item.name);
     });
 
+$('body').on('click', '.text', function(e) {
+	console.log(e);
+	Form();
+    var parentDiv = $(e.target).parent();
+	var image_url = parentDiv.find('img.items')[0].src;
+    var item_name = parentDiv.attr('item_name');
+	$(".popup").empty();
+	$(".popup").append("<img class='popupimage1' src=" + image_url + ">");
+});
 window.onload = function testToAppendImg(){
     $(".content").empty();
     $.ajax({
@@ -30,11 +39,17 @@ window.onload = function testToAppendImg(){
         method: "GET",
         success: function(response){
             response.forEach(function(item){
-            $(".content").append("<div class='imgDiv1' id='" + item.name + "Container'></div");
-            $("#" + item.name + "Container").append("<img class='items' id='" + item.name + "Img' src='" + item.image_url + "'>");
-            $("#" + item.name + "Container").append("<div class='overlay' id='" + item.name + "Overlay'></div");
-            $("#" + item.name + "Overlay").append("<div class='text' id='" + item.name + "Text'>" + "View Details" + "</div>");
+			var newDiv = $("<div class='imgDiv1' class='itemContainer'></div");
+				newDiv.append("<img class='items' src='" + item.image_url + "'>");
+				newDiv.append("<div class='overlay'></div");
+				newDiv.append("<div class='text'>" + "View Details" + "</div>");
+				$('.content').append(newDiv);
+            //$(".content").append("<div class='imgDiv1' id='" + item.name + "Container'></div");
+            //$("#" + item.name + "Container").append("<img class='items' id='" + item.name + "Img' src='" + item.image_url + "'>");
+            //$("#" + item.name + "Container").append("<div class='overlay' id='" + item.name + "Overlay'></div");
+            //$("#" + item.name + "Overlay").append("<div class='text' id='" + item.name + "Text'>" + "View Details" + "</div>");
 
+				/*
             $("#" + item.name + "Text").click(function(){
                 Form();
                 $(".popup").empty();
@@ -44,6 +59,7 @@ window.onload = function testToAppendImg(){
                 $("#itemDesc").text(item.description);
 
             });
+			*/
 
 
             });
@@ -108,7 +124,7 @@ function sendData(){
 /*
 testing localStorage
 */
-/*
+
 var clicked = false;
 $("#addCart").click(function(){
     clicked = true;
