@@ -133,8 +133,12 @@ $("#addCart").click(function(){
         method: "GET",
         success: function(response){
             if(clicked === true){
-                localStorage.setItem("name", response[0].name);
+                localStorage.setItem("name", response[0].varation.name);
+                localStorage.setItem("name", response[0].varation.price);
+                localStorage.setItem("name", response[0].varation.item);
+                localStorage.setItem("name", response[0].varation.name_price);
                 localStorage.setItem("clicked", true);
+                localStorage.setItem(response.varation[0].price);
             }else if(clicked === false){
 
             }
@@ -143,7 +147,7 @@ $("#addCart").click(function(){
 
     });
 });
-*/
+
 
 
 /*
