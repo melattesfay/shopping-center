@@ -1,3 +1,4 @@
+
 /*$("#backBtn").click(function(){
     window.history.back();
 });
@@ -10,7 +11,7 @@ $("#checkout").click(function(){
     window.location = "../payment/payment.html";
 });
 */
-
+/*
 window.onload = function makeNewDiv(){
     $("#nameCategory").empty();
     $("#quantityCategory").empty();
@@ -97,7 +98,7 @@ window.onload = function makeNewDiv(){
   $("#delete1").remove();
 });
 */
-
+/*
 var burgerPrice = [];
 var friesPrice = [];
 
@@ -150,3 +151,103 @@ function getData(){
 
 /*
 */
+
+function newDiv(price, name){
+
+
+var quantityInput= $("<input class='quantity' value='0'>");
+    quantityInput.attr("price", price);
+
+var namePlace = $("<h1 class='name'></h1>");
+    namePlace.append(name);
+
+var pricePlace = $("<h2 class='price'></h2>");
+    pricePlace.append(price);
+
+var newTestDiv = $("<div class='wrapper'> </div>");
+    newTestDiv.append(namePlace);
+    newTestDiv.append("<button class='minus'> - </button>");
+    newTestDiv.append(quantityInput);
+    newTestDiv.append("<button  class='plus'> + </button>");
+    newTestDiv.append(pricePlace);
+
+    $("#content").append(newTestDiv);
+}
+
+window.onload = function loadData(){
+    $("#content").empty();
+    $.ajax({
+        url: "../api/api.json",
+        method: "GET",
+        success: function(response){
+            response.forEach(function(x){
+                newDiv(x.variations[0].price, x.name);
+            });
+
+        }
+
+
+    });
+}
+
+//testing calculations below
+$("body").on('click', 'button.plus', function(e){
+    var subTotal = 0;
+    var parentDiv = $(e.target).parent();
+    var quantityInput = parentDiv.find("input.quantity")[0];
+
+    var currentVal = $(quantityInput).val();
+    $(quantityInput).val(++currentVal);
+
+
+});
+
+$("body").on('click', 'button.minus', function(e){
+    var parentDiv = $(e.target).parent();
+    var quantityInput = parentDiv.find("input.quantity")[0];
+    var currentVal = $(quantityInput).val();
+    if(currentVal >= 1){
+        $(quantityInput).val(--currentVal);
+
+
+    }else{
+
+    }
+
+
+
+
+
+});
+
+//melat work section
+
+
+
+//melat work section
+
+
+
+
+
+//andres work section
+
+//andres work section
+
+
+
+
+//end of section that is testing calculations
+
+
+$("#testbutton").click(function(){
+    loadData();
+
+});
+
+
+
+/*
+
+*/
+
