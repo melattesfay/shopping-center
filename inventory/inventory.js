@@ -28,9 +28,23 @@ $('body').on('click', '.text', function(e) {
 	Form();
     var parentDiv = $(e.target).parent();
 	var image_url = parentDiv.find('img.items')[0].src;
-    var item_name = parentDiv.attr('item_name');
+  //  var name = response[0].variation.name;
+    var divData = JSON.parse(parentDiv.attr("itemData"));
+
 	$(".popup").empty();
+    $(".info").empty();
 	$(".popup").append("<img class='popupimage1' src=" + image_url + ">");
+    divData.variations.forEach(function(variation){
+        var buttonVariation = $("<button>" + variation.name + "</button>");
+            buttonVariation.attr("itemId", variation.item_id);
+            buttonVariation.attr("name", variation.name);;
+            buttonVariation.attr("sku", variation.sku);
+            buttonVariation.attr("price", variation.price);
+            $(".info").append(buttonVariation);
+    });
+
+
+
 });
 window.onload = function testToAppendImg(){
     $(".content").empty();
@@ -40,32 +54,34 @@ window.onload = function testToAppendImg(){
         success: function(response){
             response.forEach(function(item){
 			var newDiv = $("<div class='imgDiv1' class='itemContainer'></div");
+            //give data attr to div so we can store the items data on the div and then use it later
 				newDiv.append("<img class='items' src='" + item.image_url + "'>");
 				newDiv.append("<div class='overlay'></div");
 				newDiv.append("<div class='text'>" + "View Details" + "</div>");
+                newDiv.attr("itemData", JSON.stringify(item));
 				$('.content').append(newDiv);
-            //$(".content").append("<div class='imgDiv1' id='" + item.name + "Container'></div");
-            //$("#" + item.name + "Container").append("<img class='items' id='" + item.name + "Img' src='" + item.image_url + "'>");
-            //$("#" + item.name + "Container").append("<div class='overlay' id='" + item.name + "Overlay'></div");
-            //$("#" + item.name + "Overlay").append("<div class='text' id='" + item.name + "Text'>" + "View Details" + "</div>");
-
-				/*
-            $("#" + item.name + "Text").click(function(){
-                Form();
-                $(".popup").empty();
-                $(".popup").append("<img class='popupimage1' src=" + item.image_url + ">");
-                $("#itemName").text(item.name);
-                $("#itemPrice").text(item.variations[0].name + ": " + "$" + item.variations[0].price);
-                $("#itemDesc").text(item.description);
-
-            });
-			*/
 
 
             });
 
         }
 
+    });
+}
+function  variationButtons(){
+    $.ajax({
+        url: "../api/api.json",
+        method: "GET",
+        success: function(response){
+            response.forEach(function(item){
+                item.variations.forEach(function(variation){
+
+                    $(".info").append("<button class='testing'> testing </button>")
+
+
+                });
+            });
+        }
     });
 }
 
