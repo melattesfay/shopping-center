@@ -33,38 +33,49 @@
 
 #categories{
     display: flex;
-    flex-direction: row;
+    width: 100%;
     justify-content: space-between;
 }
 
 #name{
-    width: 50%;
+     width:106.8%;
 }
 
 #quantity{
-    width: 25%;
+width:100%;
 }
 
 #price{
-    width: 25%;
-    text-align: center;
+
 }
 
 #bottom{
     display: flex;
-    justify-content: space-around;
+    width: 100%;
+    justify-content: space-between;
 }
 
 #blank{
-    width: 33.3333333333;
+    width: 160%;
+
 }
 
 #totalQuantity{
-    width:33.3333333333;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+
 }
 
 #totalPrice{
-    width: 33.3333333333;
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+
+}
+#totalNum{
+    margin-left:400px;
 }
 
 
@@ -111,44 +122,64 @@ input{
     width:25%;
 }
 
-.quantityTest{
-    margin: 18px;
-}
+
 #delete1{
     width:25%;
     height:8%;
 }
 
-/*
+#numOfQuan{
+    margin-top: 29px;
+    margin-left: 15px;
+}
 
+#numOfTotal{
+     margin-top: 29px;
+    margin-left: 15px;
+}
+
+/*
+wrapper css
 */
 
 .wrapper{
     display:Flex;
+    justify-content: space-between;
     width: 100%;
 
 
 }
 .quantity{
-     height:23px;
+     height:25%;
     margin-top:25px;
 }
 .plus{
      height:30px;
     margin-top:25px;
 }
+
 .minus {
-    margin-left:170px;
+
     height:30px;
     margin-top:25px;
     }
 
 .price {
-margin-left:300px;
+
+
+
 }
 .name{
-    width:33%;
+    width:7%;
+
 }
+
+.itemImg{
+    Height: 100px;
+    width: 100px;
+}
+
+
 /*
 
 
