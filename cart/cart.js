@@ -152,8 +152,34 @@ function getData(){
 /*
 */
 
-function newDiv(price, name){
 
+window.onload = function itemVariations(){
+      $("#content").empty();
+     $.ajax({
+        url: "../api/api.json",
+        method: "GET",
+        success: function(response){
+             response.forEach(function(item){
+                var imageHolder = item.image_url;
+                item.variations.forEach(function(variation){
+                    newDiv(variation.price, variation.name, imageHolder);
+                });
+
+             });
+
+        }
+     });
+
+
+}
+
+
+
+
+function newDiv(price, name, url){
+
+var imagePlace = $("<img class='itemImg'>");
+    imagePlace.attr("src", url)
 
 var quantityInput= $("<input class='quantity' value='0'>");
     quantityInput.attr("price", price);
@@ -164,16 +190,20 @@ var namePlace = $("<h1 class='name'></h1>");
 var pricePlace = $("<h2 class='price'></h2>");
     pricePlace.append(price);
 
+var testWrapper = $("<div class='quantityWrapper'> </div>");
+    testWrapper.append("<button class='minus'> - </button>");
+    testWrapper.append(quantityInput);
+    testWrapper.append("<button  class='plus'> + </button>");
+
 var newTestDiv = $("<div class='wrapper'> </div>");
+    newTestDiv.append(imagePlace);
     newTestDiv.append(namePlace);
-    newTestDiv.append("<button class='minus'> - </button>");
-    newTestDiv.append(quantityInput);
-    newTestDiv.append("<button  class='plus'> + </button>");
+    newTestDiv.append(testWrapper);
     newTestDiv.append(pricePlace);
 
     $("#content").append(newTestDiv);
 }
-
+/*
 window.onload = function loadData(){
     $("#content").empty();
     $.ajax({
@@ -189,15 +219,42 @@ window.onload = function loadData(){
 
     });
 }
+*/
+function calPrice(){
+
+
+  var qTotal = 0;
+    var pTotal = 0;
+
+    // find all matching inputs (by class)
+    $('input.quantity').each(function(i, q){
+        // add the current quantity to the total
+        var x = parseInt($(q).val(), 10);
+        qTotal = qTotal + x;
+        var itemPrice = $(q).attr("price");
+        pTotal = pTotal +(x * itemPrice);
+
+
+
+
+    });
+    $("#numOfTotal").empty();
+    $("#numOfTotal").append(pTotal);
+    $("#numOfQuan").empty();
+    $("#numOfQuan").append(qTotal);
+
+}
+
 
 //testing calculations below
 $("body").on('click', 'button.plus', function(e){
-    var subTotal = 0;
+
     var parentDiv = $(e.target).parent();
     var quantityInput = parentDiv.find("input.quantity")[0];
-
     var currentVal = $(quantityInput).val();
     $(quantityInput).val(++currentVal);
+
+   calPrice();
 
 
 });
@@ -214,7 +271,7 @@ $("body").on('click', 'button.minus', function(e){
 
     }
 
-
+ calPrice();
 
 
 
