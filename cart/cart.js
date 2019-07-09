@@ -174,37 +174,6 @@ window.onload = function itemVariations(){
 }
 
 
-window.onload = function itemVariations(){
-      $("#content").empty();
-     $.ajax({
-        url: "../api/api.json",
-        method: "GET",
-        success: function(response){
-             response.forEach(function(item){
-                var imageHolder = item.image_url;
-                item.variations.forEach(function(variation){
-                    newDiv(variation.price, variation.name, imageHolder);
-                });
-
-             });
-
-        }
-     });
-
-
-}
-
-
-
-
-function newDiv(price, name, url){
-
-var imagePlace = $("<img class='itemImg'>");
-    imagePlace.attr("src", url)
-
-
-
-
 
 function newDiv(price, name, url){
 
@@ -216,6 +185,7 @@ var quantityInput= $("<input class='quantity' value='0'>");
 
 var namePlace = $("<h1 class='name'></h1>");
     namePlace.append(name);
+    namePlace.attr("name", name)
 
 var pricePlace = $("<h2 class='price'></h2>");
     pricePlace.append(price);
@@ -233,6 +203,7 @@ var newTestDiv = $("<div class='wrapper'> </div>");
 
     $("#content").append(newTestDiv);
 }
+
 /*
 window.onload = function loadData(){
     $("#content").empty();
@@ -283,21 +254,10 @@ $("body").on('click', 'button.plus', function(e){
     var quantityInput = parentDiv.find("input.quantity")[0];
     var currentVal = $(quantityInput).val();
     $(quantityInput).val(++currentVal);
-
    calPrice();
-
-
-
-
-
-
-
-
-
-
-
-
 });
+
+
 
 $("body").on('click', 'button.minus', function(e){
     var parentDiv = $(e.target).parent();
@@ -317,36 +277,6 @@ $("body").on('click', 'button.minus', function(e){
 
 
 });
-}
-
-//melat work section
-
-
-
-//melat work section
-
-
-
-
-
-//andres work section
-
-//andres work section
-
-
 
 
 //end of section that is testing calculations
-
-
-$("#testbutton").click(function(){
-    loadData();
-
-});
-
-
-
-/*
-
-*/
-
