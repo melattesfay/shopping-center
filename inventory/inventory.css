@@ -184,11 +184,10 @@ Modal and Tranparency ends header
 
 .popup{
     display:flex;
-    width: 50%;
 }
 
 .variationBtn{
-    margin:7px;
+    margin: auto;
 }
 
 
@@ -198,21 +197,19 @@ Modal and Tranparency ends header
     flex-direction: column;
     width: 200px;
     height: 400px;
-
-    border: 2px solid blue;
-
+    margin-left: 30px;
 }
 
 #infoDiv{
     height: 50%;
     width: 100%;
-    border: 2px solid red;
 }
 
 #buttonDiv{
+    display: flex;
+    flex-direction: column;
     height: 50%;
     width: 100%;
-    border: 2px solid green;
 }
 
 .itemTitle{
