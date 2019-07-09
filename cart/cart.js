@@ -173,6 +173,7 @@ window.onload = function itemVariations(){
 
 }
 
+
 window.onload = function itemVariations(){
       $("#content").empty();
      $.ajax({
@@ -200,6 +201,7 @@ function newDiv(price, name, url){
 
 var imagePlace = $("<img class='itemImg'>");
     imagePlace.attr("src", url)
+
 
 
 
@@ -283,6 +285,8 @@ $("body").on('click', 'button.plus', function(e){
     $(quantityInput).val(++currentVal);
 
    calPrice();
+
+
 
 
 
