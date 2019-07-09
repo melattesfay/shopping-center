@@ -195,9 +195,15 @@ $("body").on('click', 'button.plus', function(e){
     var subTotal = 0;
     var parentDiv = $(e.target).parent();
     var quantityInput = parentDiv.find("input.quantity")[0];
-
     var currentVal = $(quantityInput).val();
     $(quantityInput).val(++currentVal);
+
+
+
+
+
+
+
 
 
 });
@@ -206,7 +212,8 @@ $("body").on('click', 'button.minus', function(e){
     var parentDiv = $(e.target).parent();
     var quantityInput = parentDiv.find("input.quantity")[0];
     var currentVal = $(quantityInput).val();
-    if(currentVal >= 1){
+
+    if(currentVal >= 1){  // can´t go lower than 0
         $(quantityInput).val(--currentVal);
 
 
