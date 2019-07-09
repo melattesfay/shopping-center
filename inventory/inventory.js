@@ -35,17 +35,24 @@ $('body').on('click', '.text', function(e) {
 	$(".popup").append("<img class='popupimage1' src=" + image_url + ">");
 
    $("#infoDiv").append("<h1 class='itemTitle'>" + divData.name + "</h1>");
-    $("#infoDiv").append("<h4 class='itemDesc'>" + divData.description + "</h4>");
+    $("#infoDiv").append("<h2 class='itemDesc'>" + divData.description + "</h2>");
 
 
     divData.variations.forEach(function(variation){
         var buttonVariation = $("<button class='variationBtn'>" + variation.name + " $" + variation.price +  "</button>");
+        
             buttonVariation.attr("itemId", variation.item_id);
             buttonVariation.attr("name", variation.name);;
             buttonVariation.attr("sku", variation.sku);
             buttonVariation.attr("price", variation.price);
             $("#buttonDiv").append(buttonVariation);
-            $(buttonVariation).click(function(){
+
+            $(buttonVariation).click(function(e){
+                var target = $(e.target);
+                var sku = target.attr("sku");
+                var count = localStorage.getItem(sku);
+                    count++;
+                localStorage.setItem(sku, count);
                 onClick();
                 closeForm();
             });
@@ -61,7 +68,6 @@ window.onload = function testToAppendImg(){
         method: "GET",
         success: function(response){
             response.forEach(function(item){
-
 			var newDiv = $("<div class='imgDiv1' class='itemContainer'></div");
             //give data attr to div so we can store the items data on the div and then use it later
 				newDiv.append("<img class='items' src='" + item.image_url + "'>");
@@ -70,7 +76,14 @@ window.onload = function testToAppendImg(){
                 newDiv.attr("itemData", JSON.stringify(item));
 				$('.content').append(newDiv);
 
+                item.variations.forEach(function(variation){
+                if(!localStorage.getItem(variation.sku)){
+                    localStorage.setItem(variation.sku, 0);
+                }
+                clicks = clicks + parseInt(localStorage.getItem(variation.sku));
+                document.getElementById("clicks").innerHTML = clicks;
 
+                });
             });
 
         }
@@ -87,7 +100,7 @@ function  variationButtons(){
                 item.variations.forEach(function(variation){
 
                     $(".info").append("<button class='testing'> testing </button>")
-
+   
 
                 });
             });
