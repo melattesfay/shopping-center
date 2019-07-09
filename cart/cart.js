@@ -203,6 +203,7 @@ var imagePlace = $("<img class='itemImg'>");
 
 
 
+
 function newDiv(price, name, url){
 
 var imagePlace = $("<img class='itemImg'>");
@@ -282,6 +283,7 @@ $("body").on('click', 'button.plus', function(e){
     $(quantityInput).val(++currentVal);
 
    calPrice();
+
 
 
 
