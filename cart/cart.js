@@ -173,6 +173,33 @@ window.onload = function itemVariations(){
 
 }
 
+window.onload = function itemVariations(){
+      $("#content").empty();
+     $.ajax({
+        url: "../api/api.json",
+        method: "GET",
+        success: function(response){
+             response.forEach(function(item){
+                var imageHolder = item.image_url;
+                item.variations.forEach(function(variation){
+                    newDiv(variation.price, variation.name, imageHolder);
+                });
+
+             });
+
+        }
+     });
+
+
+}
+
+
+
+
+function newDiv(price, name, url){
+
+var imagePlace = $("<img class='itemImg'>");
+    imagePlace.attr("src", url)
 
 
 
@@ -284,6 +311,7 @@ $("body").on('click', 'button.minus', function(e){
 
 
 });
+}
 
 //melat work section
 
