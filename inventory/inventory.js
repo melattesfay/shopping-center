@@ -77,6 +77,7 @@ window.onload = function testToAppendImg(){
 
     });
 }
+
 function  variationButtons(){
     $.ajax({
         url: "../api/api.json",
@@ -127,17 +128,7 @@ $("#addCart").click(function(){
 
 });
 
-/*
-*/
 
-function sendData(){
-    $.ajax({
-        url: "../api/api.json",
-        method: "GET",
-        success: function(response){
-            response.forEach(function(item){
-                localStorage.setItem("name", item.name);
-            });
-        }
-    });
-}
+
+
+
