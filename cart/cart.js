@@ -1,16 +1,13 @@
 
-/*$("#backBtn").click(function(){
+$("#backBtn").click(function(){
     window.history.back();
 });
-
+/*
 $("#logo").click(function(){
     window.location = "../homepage.html";
 });
 
-$("#checkout").click(function(){
-    window.location = "../payment/payment.html";
-});
-*/
+
 /*
 window.onload = function makeNewDiv(){
     $("#nameCategory").empty();
@@ -279,4 +276,9 @@ $("body").on('click', 'button.minus', function(e){
 });
 
 
+
+
+$("#checkout").click(function(){
+    window.location = "../payment/payment.html";
+});
 //end of section that is testing calculations

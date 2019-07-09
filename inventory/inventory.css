@@ -6,6 +6,9 @@
     width: 100%;
     justify-content: space-between;
 }
+body{
+max-width:1100px;
+}
 
 .header{
     display: flex;
