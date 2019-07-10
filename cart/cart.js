@@ -4,9 +4,15 @@ $("#backBtn").click(function(){
 });
 /*
 $("#logo").click(function(){
-    window.location = "../homepage.html";
+    window.location = "../assets/index.html";
 });
 
+<<<<<<< HEAD
+=======
+$("#checkout").click(function(){
+    window.location = "../payment/payment.html";
+});
+>>>>>>> 4f8fc2e6c10adfafe844b3c209524aa19600f26a
 
 /*
 window.onload = function makeNewDiv(){
@@ -159,11 +165,15 @@ window.onload = function itemVariations(){
              response.forEach(function(item){
                 var imageHolder = item.image_url;
                 item.variations.forEach(function(variation){
-                    newDiv(variation.price, variation.name, imageHolder);
+                    if(!localStorage.getItem(variation.sku)){
+                    localStorage.setItem(variation.sku, 0);
+                }
+
+                    newDiv(variation.price, variation.name, imageHolder, variation.sku);
                 });
 
              });
-
+             calPrice();
         }
      });
 
@@ -171,14 +181,13 @@ window.onload = function itemVariations(){
 }
 
 
-
-function newDiv(price, name, url){
-
+function newDiv(price, name, url, sku){
 var imagePlace = $("<img class='itemImg'>");
     imagePlace.attr("src", url)
 
-var quantityInput= $("<input class='quantity' value='0'>");
+var quantityInput= $("<input class='quantity' value='" + localStorage.getItem(sku) + "'>");
     quantityInput.attr("price", price);
+    quantityInput.attr("sku", sku);
 
 var namePlace = $("<h1 class='name'></h1>");
     namePlace.append(name);
@@ -232,14 +241,12 @@ function calPrice(){
         var itemPrice = $(q).attr("price");
         pTotal = pTotal +(x * itemPrice);
 
-
-
-
-    });
+  });
     $("#numOfTotal").empty();
     $("#numOfTotal").append(pTotal);
     $("#numOfQuan").empty();
     $("#numOfQuan").append(qTotal);
+
 
 }
 
@@ -251,7 +258,9 @@ $("body").on('click', 'button.plus', function(e){
     var quantityInput = parentDiv.find("input.quantity")[0];
     var currentVal = $(quantityInput).val();
     $(quantityInput).val(++currentVal);
-   calPrice();
+    localStorage.setItem($(quantityInput).attr("sku"), currentVal);
+    calPrice();
+
 });
 
 
@@ -262,17 +271,9 @@ $("body").on('click', 'button.minus', function(e){
     var currentVal = $(quantityInput).val();
 
     if(currentVal >= 1){  // can´t go lower than 0
-        $(quantityInput).val(--currentVal);
-
-
-    }else{
-
-    }
-
- calPrice();
-
-
-
+        $(quantityInput).val(--currentVal);}
+    localStorage.setItem($(quantityInput).attr("sku"), currentVal);
+calPrice();
 });
 
 
