@@ -3,6 +3,21 @@
 <head>
   <link type='text/css' rel='stylesheet' href='cart.css' />
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- link to the SqPaymentForm library -->
+<script type="text/javascript" src="https://js.squareup.com/v2/paymentform">
+</script>
+
+<script type="text/javascript" src="../js/appid.php">
+</script>
+
+<!-- link to the local SqPaymentForm initialization -->
+<script type="text/javascript" src="../js/paymentForm.js">
+</script>
+
+<!-- link to the local custom styles for SqPaymentForm -->
+<link rel="stylesheet" type="text/css" href="../paymentForm/paymentForm.css">
+
 </head>
 
 <body>
@@ -64,7 +79,31 @@
         </div>
 
     </div>
-  <button id="checkout"><span>  CheckOut  </span> </button>
+    <button id="checkout"><span>  CheckOut  </span> </button>
+
+        <div id="form-container">
+      <div id="sq-ccbox">
+        <form id="nonce-form" novalidate action="process-payment" method="post">
+          <fieldset>
+            <div id="sq-card-number"></div>
+            <div class="third">
+              <div id="sq-expiration-date"></div>
+            </div>
+            <div class="third">
+              <div id="sq-cvv"></div>
+            </div>
+            <div class="third">
+              <div id="sq-postal-code"></div>
+            </div>
+          </fieldset>
+          <button id="sq-creditcard" class="button-credit-card" onclick="onGetCardNonce(event)">Pay $1.00</button>
+          <!--
+            After a nonce is generated it will be assigned to this hidden input field.
+          -->
+          <input type="hidden" id="card-nonce" name="nonce">
+        </form>
+      </div> <!-- end #sq-ccbox -->
+     </div> <!-- end #form-container -->
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="cart.js"></script>
@@ -72,109 +111,3 @@
 
 </html>
 
-
-
-
-
-
-
-
-<!--
-        <div id="nameCategory">
- <h3 class="name" id="lineFirst"> something </h3>
-
- <button id="delete1"> delete </button>
-            <h3 class="name"> something </h3>
-            <h3 class="name"> something </h3>
-            <h3 class="name"> something </h3>
-            <h3 class="name"> something </h3>
-            <h3 class="name"> something </h3>
-            <h3 class="name"> something </h3>
-            <h3 class="name"> something </h3>
-            <h3 class="name"> something </h3>
-            <h3 class="name"> something </h3>
-            <h3 class="name"> something </h3>
-            <h3 class="name"> something </h3>
-        </div>
-
-        <div id="quantityCategory">
-            <div class="quantityTest" id="firstLine2">
-                    <button class="minus" > - </button>
-                    <input value= 1 class="input" >
-                    <button class="plus"> + </button>
-            </div>
-            <div class="quantityTest">
-                <button class="minus"> - </button>
-                <input value= 1 class="input">
-                <button class="plus"> + </button>
-            </div>
-            <div class="quantityTest">
-                <button class="minus"> - </button>
-                <input value= 1 class="input">
-                <button class="plus"> + </button>
-            </div>
-            <div class="quantityTest">
-                <button class="minus"> - </button>
-                <input value= 1 class="input">
-                <button class="plus"> + </button>
-            </div>
-            <div class="quantityTest">
-                <button class="minus"> - </button>
-                <input value= 1 class="input">
-                <button class="plus"> + </button>
-            </div>
-            <div class="quantityTest">
-                <button class="minus"> - </button>
-                <input value= 1 class="input">
-                <button class="plus"> + </button>
-            </div>
-            <div class="quantityTest">
-                <button class="minus"> - </button>
-                <input value= 1 class="input">
-                <button class="plus"> + </button>
-            </div>
-            <div class="quantityTest">
-                <button class="minus"> - </button>
-                <input value= 1 class="input">
-                <button class="plus"> + </button>
-            </div>
-            <div class="quantityTest">
-                <button class="minus"> - </button>
-                <input value= 1 class="input">
-                <button class="plus"> + </button>
-            </div>
-            <div class="quantityTest">
-                <button class="minus"> - </button>
-                <input value= 1 class="input">
-                <button class="plus"> + </button>
-            </div>
-            <div class="quantityTest">
-                <button class="minus"> - </button>
-                <input value= 1 class="input">
-                <button class="plus"> + </button>
-            </div>
-            <div class="quantityTest">
-                <button class="minus"> - </button>
-                <input value= 1 class="input">
-                <button class="plus"> + </button>
-            </div>
-        </div>
-
-        <div id="priceCategory">
-            <h3 class="price" class="firstLine3"> $100.00 </h3>
-            <h3 class="price" class="secondLine3"> $100.00 </h3>
-            <h3 class="price"> $100.00 </h3>
-            <h3 class="price"> $100.00 </h3>
-            <h3 class="price"> $100.00 </h3>
-            <h3 class="price"> $100.00 </h3>
-            <h3 class="price"> $100.00 </h3>
-            <h3 class="price"> $100.00 </h3>
-            <h3 class="price"> $100.00 </h3>
-            <h3 class="price"> $100.00 </h3>
-            <h3 class="price"> $100.00 </h3>
-            <h3 class="price"> $100.00 </h3>
-
-        </div>
-
-    </div>
-    -->
