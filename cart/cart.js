@@ -2,14 +2,17 @@
 $("#backBtn").click(function(){
     window.history.back();
 });
-
+/*
 $("#logo").click(function(){
     window.location = "../assets/index.html";
 });
 
+<<<<<<< HEAD
+=======
 $("#checkout").click(function(){
     window.location = "../payment/payment.html";
 });
+>>>>>>> 4f8fc2e6c10adfafe844b3c209524aa19600f26a
 
 /*
 window.onload = function makeNewDiv(){
@@ -173,14 +176,12 @@ window.onload = function itemVariations(){
              calPrice();
         }
      });
-    
+
 
 }
 
 
-
 function newDiv(price, name, url, sku){
-
 var imagePlace = $("<img class='itemImg'>");
     imagePlace.attr("src", url)
 
@@ -239,10 +240,8 @@ function calPrice(){
         qTotal = qTotal + x;
         var itemPrice = $(q).attr("price");
         pTotal = pTotal +(x * itemPrice);
-        
 
-            
-    });
+  });
     $("#numOfTotal").empty();
     $("#numOfTotal").append(pTotal);
     $("#numOfQuan").empty();
@@ -272,17 +271,15 @@ $("body").on('click', 'button.minus', function(e){
     var currentVal = $(quantityInput).val();
 
     if(currentVal >= 1){  // can´t go lower than 0
-        $(quantityInput).val(--currentVal);
-
-
-    }
+        $(quantityInput).val(--currentVal);}
     localStorage.setItem($(quantityInput).attr("sku"), currentVal);
-
- calPrice();
-
-
-
+calPrice();
 });
 
 
+
+
+$("#checkout").click(function(){
+    window.location = "../payment/payment.html";
+});
 //end of section that is testing calculations
