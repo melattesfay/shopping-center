@@ -1,4 +1,6 @@
-
+$("#logo").click(function(){
+    window.location = "../assets/index.html";
+});
 $("#backBtn").click(function(){
     window.history.back();
 });
@@ -10,28 +12,35 @@ window.onload = function itemVariations(){
         url: "../api/api.json",
         method: "GET",
         success: function(response){
+
              response.forEach(function(item){
                 var imageHolder = item.image_url;
                 item.variations.forEach(function(variation){
                     if(!localStorage.getItem(variation.sku)){
                     localStorage.setItem(variation.sku, 0);
+                   
                 }
+                   newDiv(variation.price, variation.name, imageHolder, variation.sku);
 
-                    newDiv(variation.price, variation.name, imageHolder, variation.sku);
+
                 });
 
              });
              calPrice();
+
         }
      });
 
 
 }
 
+   $("#content").append(newTestDiv);
 
+
+}
 function newDiv(price, name, url, sku){
 var imagePlace = $("<img class='itemImg'>");
-    imagePlace.attr("src", url)
+    imagePlace.attr("src", url);
 
 var quantityInput= $("<input class='quantity' value='" + localStorage.getItem(sku) + "'>");
     quantityInput.attr("price", price);
@@ -55,9 +64,10 @@ var newTestDiv = $("<div class='wrapper'> </div>");
     newTestDiv.append(testWrapper);
     newTestDiv.append(pricePlace);
 
-    $("#content").append(newTestDiv);
-}
 
+   $("#content").append(newTestDiv);
+
+}
 /*
 window.onload = function loadData(){
     $("#content").empty();
@@ -119,6 +129,7 @@ $("body").on('click', 'button.minus', function(e){
     var currentVal = $(quantityInput).val();
 
     if(currentVal >= 1){  // can´t go lower than 0
+
         $(quantityInput).val(--currentVal);}
     localStorage.setItem($(quantityInput).attr("sku"), currentVal);
 calPrice();
