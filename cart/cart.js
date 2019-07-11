@@ -12,6 +12,7 @@ window.onload = function itemVariations(){
         //url: "../api/api.json",
         url: "../api/inventory.php",
         method: "GET",
+        dataType: "json",
         success: function(response){
 
              $.each(response, function(index, item){
