@@ -62,7 +62,8 @@ $('body').on('click', '.text', function(e) {
 window.onload = function testToAppendImg(){
     $(".content").empty();
     $.ajax({
-        url: "../api/api.json",
+        //url: "../api/api.json",
+        url: "../api/inventory.php",
         method: "GET",
         success: function(response){
             $.each(response, function(index, item){
