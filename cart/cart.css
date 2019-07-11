@@ -191,45 +191,7 @@ wrapper css
 .quantityWrapper{
     height:97px;
 }
-#checkout {
- margin-left:80%;
-  border-radius: 4px;
-  background-color: green;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 28px;
-  padding: 20px;
-  width: 200px;
-  transition: all 0.5s; /*change button easily when it is hoovering*/
-  cursor: pointer; /*mouse arrow*/
 
-}
-
-#checkout span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-#checkout span:after {
-  content: '\00bb'; /* draw >>*/
-  position: absolute;
-  opacity: 0; /* make the color bold */
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-
-#checkout:hover span {
-  padding-right: 25px;
-}
-
-#checkout:hover span:after {
-  opacity: 1;
-  right: 0;
-}
 
 /*
 
@@ -240,3 +202,8 @@ wrapper css
      height:32px;
  }
 
+
+#sq-ccbox{
+    margin-top:-10%;
+
+}
