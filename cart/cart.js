@@ -22,7 +22,7 @@ window.onload = function itemVariations(){
                     localStorage.setItem(variation.sku, 0);
 
                 }
-                   newDiv(variation.price, variation.name, imageHolder, variation.sku);
+                   newDiv(parseFloat(variation.price), variation.name, imageHolder, variation.sku);
 
 
                 });
@@ -80,7 +80,7 @@ function calPrice(){
         var x = parseInt($(q).val(), 10);
         qTotal = qTotal + x;
         var itemPrice = $(q).attr("price");
-        pTotal = pTotal +(x * itemPrice);
+        pTotal = parseFloat(pTotal + (x * itemPrice));
 
   });
     $("#numOfTotal").empty();
