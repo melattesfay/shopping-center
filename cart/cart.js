@@ -21,6 +21,7 @@ window.onload = function itemVariations(){
                     if(!localStorage.getItem(variation.sku)){
                     localStorage.setItem(variation.sku, 0);
 
+
                 }
                    newDiv(variation.price, variation.name, imageHolder, variation.sku);
 
