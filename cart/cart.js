@@ -17,7 +17,7 @@ window.onload = function itemVariations(){
 
              $.each(response, function(index, item){
                 var imageHolder = item.image_url;
-                $.each(variations, function(index, variation){
+                $.each(item.variations, function(index, variation){
                     if(!localStorage.getItem(variation.sku)){
                     localStorage.setItem(variation.sku, 0);
 
