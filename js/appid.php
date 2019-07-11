@@ -1,2 +1,2 @@
 <?php
-echo 'const applicationID = "' . $_ENV['SQUARE_APP_ID'] . '"';
+echo 'const applicationId = "' . $_ENV['SQUARE_APP_ID'] . '"';

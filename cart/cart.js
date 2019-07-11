@@ -1,4 +1,6 @@
-
+$("#logo").click(function(){
+    window.location = "../assets/index.html";
+});
 $("#backBtn").click(function(){
     window.history.back();
 });
@@ -7,21 +9,27 @@ $("#backBtn").click(function(){
 window.onload = function itemVariations(){
       $("#content").empty();
      $.ajax({
-        url: "../api/api.json",
+        //url: "../api/api.json",
+        url: "../api/inventory.php",
         method: "GET",
+        dataType: "json",
         success: function(response){
-             response.forEach(function(item){
+
+             $.each(response, function(index, item){
                 var imageHolder = item.image_url;
-                item.variations.forEach(function(variation){
+                $.each(item.variations, function(index, variation){
                     if(!localStorage.getItem(variation.sku)){
                     localStorage.setItem(variation.sku, 0);
-                }
 
-                    newDiv(variation.price, variation.name, imageHolder, variation.sku);
+                }
+                   newDiv(variation.price, variation.name, imageHolder, variation.sku);
+
+
                 });
 
              });
              calPrice();
+
         }
      });
 
@@ -31,7 +39,7 @@ window.onload = function itemVariations(){
 
 function newDiv(price, name, url, sku){
 var imagePlace = $("<img class='itemImg'>");
-    imagePlace.attr("src", url)
+    imagePlace.attr("src", url);
 
 var quantityInput= $("<input class='quantity' value='" + localStorage.getItem(sku) + "'>");
     quantityInput.attr("price", price);
@@ -55,26 +63,11 @@ var newTestDiv = $("<div class='wrapper'> </div>");
     newTestDiv.append(testWrapper);
     newTestDiv.append(pricePlace);
 
-    $("#content").append(newTestDiv);
+
+   $("#content").append(newTestDiv);
+
 }
 
-/*
-window.onload = function loadData(){
-    $("#content").empty();
-    $.ajax({
-        url: "../api/api.json",
-        method: "GET",
-        success: function(response){
-            response.forEach(function(x){
-                newDiv(x.variations[0].price, x.name);
-            });
-
-        }
-
-
-    });
-}
-*/
 function calPrice(){
 
 
@@ -119,6 +112,7 @@ $("body").on('click', 'button.minus', function(e){
     var currentVal = $(quantityInput).val();
 
     if(currentVal >= 1){  // can´t go lower than 0
+
         $(quantityInput).val(--currentVal);}
     localStorage.setItem($(quantityInput).attr("sku"), currentVal);
 calPrice();

@@ -54,7 +54,12 @@ class Inventory {
                 $itemVariation['item_id'] = $variationObject->getId();
                 $itemVariation['name'] = $variation->getName();
                 $itemVariation['sku'] = $variation->getSku();
-                $itemVariation['price'] = $variation->getPriceMoney()->getAmount() / 100;
+                $price = $variation->getPriceMoney();
+                if (isset($price)) {
+                    $itemVariation['price'] = $variation->getPriceMoney()->getAmount() / 100;
+                } else {
+                    $itemVariation['price'] = 0;
+                }
                 $data['variations'][] = $itemVariation;
             }
             $results[] = $data;
