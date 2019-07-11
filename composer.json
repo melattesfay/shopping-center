@@ -1,0 +1,9 @@
+{
+  "require": {
+    "ext-json": "*",
+    "square/connect": "^2.20190508"
+  },
+  "autoload": {
+    "psr-4": {"CodeNationSquare\\":  "src/"}
+  }
+}
