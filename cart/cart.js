@@ -14,9 +14,9 @@ window.onload = function itemVariations(){
         method: "GET",
         success: function(response){
 
-             response.forEach(function(item){
+             $.each(response, function(index, item){
                 var imageHolder = item.image_url;
-                item.variations.forEach(function(variation){
+                $.each(variations, function(index, variation){
                     if(!localStorage.getItem(variation.sku)){
                     localStorage.setItem(variation.sku, 0);
 
@@ -69,23 +69,7 @@ var newTestDiv = $("<div class='wrapper'> </div>");
    $("#content").append(newTestDiv);
 
 }
-/*
-window.onload = function loadData(){
-    $("#content").empty();
-    $.ajax({
-        url: "../api/api.json",
-        method: "GET",
-        success: function(response){
-            response.forEach(function(x){
-                newDiv(x.variations[0].price, x.name);
-            });
 
-        }
-
-
-    });
-}
-*/
 function calPrice(){
 
 
