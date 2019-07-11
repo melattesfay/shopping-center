@@ -86,7 +86,7 @@ function calPrice(){
     $("#numOfTotal").empty();
     $("#numOfTotal").append(pTotal);
     $("#numOfQuan").empty();
-    $("#numOfQuan").append(parseFloat(qTotal));
+    $("#numOfQuan").append(parseFloat(qTotal) * 10);
 
 
 }
