@@ -23,9 +23,7 @@ max-width:1100px;
 #shoppingCart{
     display:flex;
 }
-#demo{
-    padding:40px;
-}
+
 
 #logo:hover{
     width: 150px;
@@ -192,7 +190,6 @@ wrapper css
     height:97px;
 }
 
-
 /*
 
 
@@ -203,8 +200,3 @@ wrapper css
  }
 
 
-#form-container{
-    margin-top:-50%;
-    
-
-}
