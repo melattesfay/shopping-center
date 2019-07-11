@@ -37,7 +37,7 @@ $('body').on('click', '.text', function(e) {
 
 
     $.each(divData.variations, function(index, variation){
-        var buttonVariation = $("<button class='variationBtn'>" + variation.name + " $" + variation.price +  "</button>");
+        var buttonVariation = $("<button class='variationBtn'>" + variation.name + " $" + variation.price.toFixed(2) +  "</button>");
 
             buttonVariation.attr("itemId", variation.item_id);
             buttonVariation.attr("name", variation.name);;
@@ -62,8 +62,10 @@ $('body').on('click', '.text', function(e) {
 window.onload = function testToAppendImg(){
     $(".content").empty();
     $.ajax({
-        url: "../api/api.json",
+        //url: "../api/api.json",
+        url: "../api/inventory.php",
         method: "GET",
+        dataType: "json",
         success: function(response){
             $.each(response, function(index, item){
 			var newDiv = $("<div class='imgDiv1' class='itemContainer'></div");

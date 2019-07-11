@@ -23,7 +23,7 @@ window.onload = function itemVariations(){
 
 
                 }
-                   newDiv(variation.price, variation.name, imageHolder, variation.sku);
+                   newDiv(variation.price.toFixed(2), variation.name, imageHolder, variation.sku);
 
 
                 });
@@ -51,7 +51,7 @@ var namePlace = $("<h1 class='name'></h1>");
     namePlace.attr("name", name)
 
 var pricePlace = $("<h2 class='price'></h2>");
-    pricePlace.append(price);
+    pricePlace.append("$" + price);
 
 var testWrapper = $("<div class='quantityWrapper'> </div>");
     testWrapper.append("<button class='minus'> - </button>");
@@ -81,11 +81,11 @@ function calPrice(){
         var x = parseInt($(q).val(), 10);
         qTotal = qTotal + x;
         var itemPrice = $(q).attr("price");
-        pTotal = pTotal +(x * itemPrice);
+        pTotal = pTotal + (x * itemPrice);
 
   });
     $("#numOfTotal").empty();
-    $("#numOfTotal").append(pTotal);
+    $("#numOfTotal").append("$" + pTotal.toFixed(2));
     $("#numOfQuan").empty();
     $("#numOfQuan").append(qTotal);
 
