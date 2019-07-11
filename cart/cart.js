@@ -84,7 +84,7 @@ function calPrice(){
 
   });
     $("#numOfTotal").empty();
-    $("#numOfTotal").append(pTotal.toFixed(2));
+    $("#numOfTotal").append("$" + pTotal.toFixed(2));
     $("#numOfQuan").empty();
     $("#numOfQuan").append(qTotal);
 

@@ -54,10 +54,6 @@ max-width:1920px;
 width:100%;
 }
 
-#price{
-
-}
-
 #bottom{
     display: flex;
     width: 100%;
@@ -94,12 +90,12 @@ width:100%;
     height: 20px;
     text-align: center;
 }
+
 #content{
     display: block;
     width: 100%;
-    height: 300px;
+    height: 450px;
     overflow-y: auto;
-
 }
 
 #nameCategory{
@@ -123,16 +119,18 @@ width:100%;
 input{
     width: 20px;
 }
+
 #whitespace1{
     width: 50%;
 }
+
 #whiteSpace2{
     width: 25%;
 }
+
 #actuallContent{
     width:25%;
 }
-
 
 #delete1{
     width:25%;
@@ -170,28 +168,23 @@ wrapper css
 }
 
 .minus {
-
     height:30px;
     margin-top:25px;
     }
 
-.price {
-
-
-
-}
 .name{
     width:7%;
-
 }
 
 .itemImg{
     Height: 100px;
     width: 100px;
 }
+
 .quantityWrapper{
     height:97px;
 }
+
 #checkout {
  margin-left:80%;
   border-radius: 4px;

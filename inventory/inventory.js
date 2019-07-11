@@ -37,7 +37,7 @@ $('body').on('click', '.text', function(e) {
 
 
     $.each(divData.variations, function(index, variation){
-        var buttonVariation = $("<button class='variationBtn'>" + variation.name + " $" + variation.price +  "</button>");
+        var buttonVariation = $("<button class='variationBtn'>" + variation.name + " $" + variation.price.toFixed(2) +  "</button>");
 
             buttonVariation.attr("itemId", variation.item_id);
             buttonVariation.attr("name", variation.name);;
