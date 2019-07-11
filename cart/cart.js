@@ -22,7 +22,7 @@ window.onload = function itemVariations(){
                     localStorage.setItem(variation.sku, 0);
 
                 }
-                   newDiv(parseFloat(variation.price), variation.name, imageHolder, variation.sku);
+                   newDiv(variation.price.toFixed(2), variation.name, imageHolder, variation.sku);
 
 
                 });
@@ -50,7 +50,7 @@ var namePlace = $("<h1 class='name'></h1>");
     namePlace.attr("name", name)
 
 var pricePlace = $("<h2 class='price'></h2>");
-    pricePlace.append(price);
+    pricePlace.append("$" + price);
 
 var testWrapper = $("<div class='quantityWrapper'> </div>");
     testWrapper.append("<button class='minus'> - </button>");
