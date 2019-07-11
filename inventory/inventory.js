@@ -65,6 +65,7 @@ window.onload = function testToAppendImg(){
         //url: "../api/api.json",
         url: "../api/inventory.php",
         method: "GET",
+        dataType: "json",
         success: function(response){
             $.each(response, function(index, item){
 			var newDiv = $("<div class='imgDiv1' class='itemContainer'></div");
