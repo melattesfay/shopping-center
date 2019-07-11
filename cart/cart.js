@@ -17,9 +17,10 @@ window.onload = function itemVariations(){
 
              $.each(response, function(index, item){
                 var imageHolder = item.image_url;
-                $.each(item.variations, function(index, variation){
+             $.each(item.variations, function(index, variation){
                     if(!localStorage.getItem(variation.sku)){
                     localStorage.setItem(variation.sku, 0);
+
 
                 }
                    newDiv(variation.price.toFixed(2), variation.name, imageHolder, variation.sku);
@@ -124,4 +125,3 @@ calPrice();
 $("#checkout").click(function(){
     window.location = "../payment/payment.html";
 });
-//end of section that is testing calculations
