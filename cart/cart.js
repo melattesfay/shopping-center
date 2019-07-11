@@ -35,9 +35,6 @@ window.onload = function itemVariations(){
 
 }
 
-   $("#content").append(newTestDiv);
-
-
 
 function newDiv(price, name, url, sku){
 var imagePlace = $("<img class='itemImg'>");
