@@ -9,16 +9,18 @@ $("#backBtn").click(function(){
 window.onload = function itemVariations(){
       $("#content").empty();
      $.ajax({
-        url: "../api/api.json",
+        //url: "../api/api.json",
+        url: "../api/inventory.php",
         method: "GET",
+        dataType: "json",
         success: function(response){
 
-             response.forEach(function(item){
+             $.each(response, function(index, item){
                 var imageHolder = item.image_url;
-                item.variations.forEach(function(variation){
+                $.each(item.variations, function(index, variation){
                     if(!localStorage.getItem(variation.sku)){
                     localStorage.setItem(variation.sku, 0);
-                   
+
                 }
                    newDiv(variation.price, variation.name, imageHolder, variation.sku);
 
@@ -34,10 +36,7 @@ window.onload = function itemVariations(){
 
 }
 
-   $("#content").append(newTestDiv);
 
-
-}
 function newDiv(price, name, url, sku){
 var imagePlace = $("<img class='itemImg'>");
     imagePlace.attr("src", url);
@@ -68,23 +67,7 @@ var newTestDiv = $("<div class='wrapper'> </div>");
    $("#content").append(newTestDiv);
 
 }
-/*
-window.onload = function loadData(){
-    $("#content").empty();
-    $.ajax({
-        url: "../api/api.json",
-        method: "GET",
-        success: function(response){
-            response.forEach(function(x){
-                newDiv(x.variations[0].price, x.name);
-            });
 
-        }
-
-
-    });
-}
-*/
 function calPrice(){
 
 

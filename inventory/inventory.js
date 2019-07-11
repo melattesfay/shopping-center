@@ -19,9 +19,7 @@ function onClick() {
 
 
   var data = getCatalog();
-    data.forEach(function(item) {
-        console.log(item.name);
-    });
+
 
 $('body').on('click', '.text', function(e) {
 	console.log(e);
@@ -38,9 +36,9 @@ $('body').on('click', '.text', function(e) {
     $("#infoDiv").append("<h2 class='itemDesc'>" + divData.description + "</h2>");
 
 
-    divData.variations.forEach(function(variation){
+    $.each(divData.variations, function(index, variation){
         var buttonVariation = $("<button class='variationBtn'>" + variation.name + " $" + variation.price +  "</button>");
-        
+
             buttonVariation.attr("itemId", variation.item_id);
             buttonVariation.attr("name", variation.name);;
             buttonVariation.attr("sku", variation.sku);
@@ -67,7 +65,7 @@ window.onload = function testToAppendImg(){
         url: "../api/api.json",
         method: "GET",
         success: function(response){
-            response.forEach(function(item){
+            $.each(response, function(index, item){
 			var newDiv = $("<div class='imgDiv1' class='itemContainer'></div");
             //give data attr to div so we can store the items data on the div and then use it later
 				newDiv.append("<img class='items' src='" + item.image_url + "'>");
@@ -76,7 +74,7 @@ window.onload = function testToAppendImg(){
                 newDiv.attr("itemData", JSON.stringify(item));
 				$('.content').append(newDiv);
 
-                item.variations.forEach(function(variation){
+                $.each(item.variations, function(index, variation){
                 if(!localStorage.getItem(variation.sku)){
                     localStorage.setItem(variation.sku, 0);
                 }
@@ -91,22 +89,6 @@ window.onload = function testToAppendImg(){
     });
 }
 
-function  variationButtons(){
-    $.ajax({
-        url: "../api/api.json",
-        method: "GET",
-        success: function(response){
-            response.forEach(function(item){
-                item.variations.forEach(function(variation){
-
-                    $(".info").append("<button class='testing'> testing </button>")
-   
-
-                });
-            });
-        }
-    });
-}
 
 
 function Form() {
