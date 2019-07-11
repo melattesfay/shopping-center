@@ -80,13 +80,13 @@ function calPrice(){
         var x = parseInt($(q).val(), 10);
         qTotal = qTotal + x;
         var itemPrice = $(q).attr("price");
-        pTotal = parseFloat(pTotal + (x * itemPrice));
+        pTotal = pTotal + (x * itemPrice);
 
   });
     $("#numOfTotal").empty();
     $("#numOfTotal").append(pTotal);
     $("#numOfQuan").empty();
-    $("#numOfQuan").append(qTotal);
+    $("#numOfQuan").append(parseFloat(qTotal));
 
 
 }
