@@ -42,18 +42,22 @@ max-width:1920px;
 }
 
 #name{
-     margin-left:500px;
+     margin-left:427px;
 }
 
 
 #quantity{
     margin-left: 100px;
 }
+#price{
+    margin-left:auto;
+}
 
 #bottom{
     display: flex;
-    width: 100%;
+    width: 70%;
     justify-content: space-between;
+    
 }
 
 #blank{
@@ -63,8 +67,8 @@ max-width:1920px;
 #totalQuantity{
     display: flex;
     flex-direction: row;
-    width: 100%;
-    margin-left:880px;
+    width: 700%;
+    margin-left:680px;
 
 }
 
@@ -75,7 +79,7 @@ max-width:1920px;
 
 }
 #totalNum{
-    margin-left:400px;
+    margin-left:300px;
 }
 
 

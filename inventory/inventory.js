@@ -1,4 +1,7 @@
 /*global $*/
+$("#backBtn").click(function(){
+    window.history.back();
+});
 
 $("#cartpicture").click(function(){
     window.location = "../cart/cart.html";
