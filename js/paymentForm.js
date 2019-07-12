@@ -50,21 +50,7 @@ callbacks: {
     * Triggered when: SqPaymentForm completes a card nonce request
     */
     cardNonceResponseReceived: function (errors, nonce, cardData) {
-        $.ajax({
-            url: "../api/order.php",
-            method: "POST",
-            dataType: "json",
-            success: function(response){
-                var orders = {nonce:nonce, items:[]};
-                orders.items.push({itemid: , quantity:})
-            }
-        });
-
-
-
-
-
-
+        chargeOrder(nonce);
     if (errors) {
         // Log errors from nonce generation to the browser developer console.
         console.error('Encountered errors:');
@@ -86,3 +72,23 @@ callbacks: {
     }
 }
 });
+
+function chargeOrder(nonce){
+    var order = {nonce: nonce, items:[]};
+    $.each("input.quantity", function(index, q){
+        if(parseInt($(q).val()) > 0){
+            order.items.push({"itemId": $(q).attr("itemId"), "quantity": $(q).val()})
+        }
+    });
+     $.ajax({
+        type: "POST",
+        url: "../api/order.php",
+        data: {
+            "order": order,
+        },
+        dataType: "json",
+        success: function(response){
+        }
+     });
+}
+

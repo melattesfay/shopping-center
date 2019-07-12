@@ -24,7 +24,7 @@ window.onload = function itemVariations(){
 
 
                 }
-                   newDiv(variation.price.toFixed(2), variation.name, imageHolder, variation.sku);
+                    newDiv(variation.price.toFixed(2), variation.name, imageHolder, variation.sku, variation.item_id);
 
 
                 });
@@ -39,13 +39,14 @@ window.onload = function itemVariations(){
 }
 
 
-function newDiv(price, name, url, sku){
+function newDiv(price, name, url, sku, itemId){
 var imagePlace = $("<img class='itemImg'>");
     imagePlace.attr("src", url);
 
 var quantityInput= $("<input class='quantity' value='" + localStorage.getItem(sku) + "'>");
     quantityInput.attr("price", price);
     quantityInput.attr("sku", sku);
+    quantityInput.attr("itemId", itemId)
 
 var namePlace = $("<h1 class='name'></h1>");
     namePlace.append(name);
@@ -81,6 +82,7 @@ function calPrice(){
         // add the current quantity to the total
         var x = parseInt($(q).val(), 10);
         qTotal = qTotal + x;
+        // sum of all the prices
         var itemPrice = $(q).attr("price");
         pTotal = pTotal + (x * itemPrice);
 
