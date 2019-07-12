@@ -64,8 +64,8 @@ max-width:1920px;
 #totalQuantity{
     display: flex;
     flex-direction: row;
-    width: 100%;
-    margin-left:880px;
+    width: 700%;
+    margin-left:680px;
 
 }
 
