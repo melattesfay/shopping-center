@@ -75,7 +75,8 @@ callbacks: {
 
 function chargeOrder(nonce){
     var order = {nonce: nonce, items:[]};
-    $.each("input.quantity", function(index, q){
+
+    $("input.quantity").each(function(index, q){
         if(parseInt($(q).val()) > 0){
             order.items.push({"itemId": $(q).attr("itemId"), "quantity": $(q).val()})
         }
