@@ -30,6 +30,10 @@
     height:20px;
 }
 
+#backBtn:hover{
+    cursor: pointer;
+}
+
 #cartDiv{
     display: flex;
     overflow: hidden;
@@ -122,6 +126,12 @@ Start of hover
   text-align: center;
   text-decoration: bold;
 }
+
+.text:hover{
+    cursor: pointer;
+}
+
+
 /*
 end of hover
 */
@@ -184,6 +194,9 @@ Modal and Tranparency ends header
     margin: auto;
 }
 
+.variationBtn:hover{
+    cursor: pointer;
+}
 
 
 .info{

@@ -7,12 +7,10 @@
     width:32px;
     height:32px;
 }
-/*
-body{
-max-width:1920px;
 
+#backBtn:hover{
+    cursor: pointer;
 }
-*/
 
 #logo{
     width: 100px;
