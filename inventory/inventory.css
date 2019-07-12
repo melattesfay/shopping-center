@@ -212,3 +212,7 @@ Modal and Tranparency ends header
 .itemDesc{
     text-align:center;
 }
+#backButtonTwo{
+     width:32px;
+     height:32px;
+ }
