@@ -61,7 +61,6 @@ callbacks: {
         return;
     }
 
-    alert(`The generated nonce is:\n${nonce}`);
     // Uncomment the following block to
     // 1. assign the nonce to a form field and
     // 2. post the form to the payment processing handler
@@ -84,7 +83,8 @@ function chargeOrder(nonce){
      $.ajax({
         type: "POST",
         url: "../api/order.php",
-        data: order ,
+        data: JSON.stringify(order),
+        contentType: "application/json",
         dataType: "json",
         success: function(response){
             console.log(response);

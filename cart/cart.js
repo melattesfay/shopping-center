@@ -1,6 +1,6 @@
 
 $("#logo").click(function(){
-    window.location = "../assets/index.html";
+    window.location = "../assets/homepage.html";
 });
 $("#backBtn").click(function(){
     window.history.back();
