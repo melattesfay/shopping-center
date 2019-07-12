@@ -79,6 +79,15 @@ function chargeOrder(nonce){
             order.items.push({"itemId": $(q).attr("itemId"), "quantity": $(q).val()})
         }
     });
+     $.ajax({
+        type: "POST",
+        url: "../api/order.php",
+        data: {
+            "order": order,
+        },
+        dataType: "json",
+        success: function(response){
+        }
+     });
 }
 
-$.post("../api/order.php", {chargeOrder();, type:"json"});
