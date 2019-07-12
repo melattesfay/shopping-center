@@ -42,22 +42,22 @@ max-width:1920px;
 }
 
 #name{
-     margin-left:427px;
+     margin-left:32.8%;
 }
 
 
 #quantity{
-    margin-left: 100px;
+    margin-left: 16%;
 }
 #price{
-    margin-left:auto;
+    margin-left:12%;
 }
 
 #bottom{
     display: flex;
     width: 70%;
     justify-content: space-between;
-    
+
 }
 
 #blank{
@@ -68,7 +68,7 @@ max-width:1920px;
     display: flex;
     flex-direction: row;
     width: 700%;
-    margin-left:680px;
+    margin-left:81%;
 
 }
 
@@ -143,7 +143,7 @@ input{
 
 #numOfTotal{
      margin-top: 29px;
-    margin-left: 15px;
+    margin-left: 11%;
 }
 
 /*
