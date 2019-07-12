@@ -6,11 +6,6 @@
     width: 100%;
     justify-content: space-between;
 }
-/*
-body{
-max-width:1920px;
-}
-*/
 .header{
     display: flex;
     width: 100%;
@@ -76,7 +71,7 @@ max-width:1920px;
     display: flex;
     flex-flow: row wrap;
     width: 800px;
-    margin: auto;
+    margin:auto;
 }
 
 .items{
@@ -182,10 +177,6 @@ Modal and Tranparency ends header
 .close-button{
     width:32px;
     height:32px;
-
-}
-
-.popup{
 
 }
 
