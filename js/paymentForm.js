@@ -42,6 +42,7 @@ postalCode: {
     placeholder: 'Postal'
 },
 
+
 // SqPaymentForm callback functions
 callbacks: {
     /*
@@ -49,6 +50,21 @@ callbacks: {
     * Triggered when: SqPaymentForm completes a card nonce request
     */
     cardNonceResponseReceived: function (errors, nonce, cardData) {
+        $.ajax({
+            url: "../api/order.php",
+            method: "POST",
+            dataType: "json",
+            success: function(response){
+                var orders = {nonce:nonce, items:[]};
+                orders.items.push({itemid: , quantity:})
+            }
+        });
+
+
+
+
+
+
     if (errors) {
         // Log errors from nonce generation to the browser developer console.
         console.error('Encountered errors:');
