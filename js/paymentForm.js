@@ -84,9 +84,7 @@ function chargeOrder(nonce){
      $.ajax({
         type: "POST",
         url: "../api/order.php",
-        data: {
-            "order": order,
-        },
+        data: order ,
         dataType: "json",
         success: function(response){
             console.log(response);
