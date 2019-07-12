@@ -9,7 +9,7 @@ $("#cartpicture").click(function(){
 });
 
 $("#logo").click(function(){
-    window.location = "../homepage.html";
+    window.location = "../assets/homepage.html";
 });
 
 var clicks = 0;

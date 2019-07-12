@@ -50,7 +50,6 @@ class Order {
                 $lineItem = new \SquareConnect\Model\OrderLineItem();
                 $lineItem->setQuantity($submittedItem['quantity']);
                 $lineItem->setCatalogObjectId($id);
-                $lineItem->setTotalMoney($lineItemData[$id] * $submittedItem['quantity']);
                 $lineItems[] = $lineItem;
             }
         }

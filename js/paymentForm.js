@@ -61,7 +61,6 @@ callbacks: {
         return;
     }
 
-    alert(`The generated nonce is:\n${nonce}`);
     // Uncomment the following block to
     // 1. assign the nonce to a form field and
     // 2. post the form to the payment processing handler
@@ -75,7 +74,8 @@ callbacks: {
 
 function chargeOrder(nonce){
     var order = {nonce: nonce, items:[]};
-    $.each("input.quantity", function(index, q){
+
+    $("input.quantity").each(function(index, q){
         if(parseInt($(q).val()) > 0){
             order.items.push({"itemId": $(q).attr("itemId"), "quantity": $(q).val()})
         }
@@ -83,11 +83,11 @@ function chargeOrder(nonce){
      $.ajax({
         type: "POST",
         url: "../api/order.php",
-        data: {
-            "order": order,
-        },
+        data: JSON.stringify(order),
+        contentType: "application/json",
         dataType: "json",
         success: function(response){
+            console.log(response);
         }
      });
 }
