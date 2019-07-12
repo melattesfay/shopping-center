@@ -88,6 +88,7 @@ function chargeOrder(nonce){
         },
         dataType: "json",
         success: function(response){
+            console.log(response);
         }
      });
 }
