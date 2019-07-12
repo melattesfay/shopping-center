@@ -52,7 +52,7 @@ max-width:1920px;
 
 #bottom{
     display: flex;
-    width: 100%;
+    width: 70%;
     justify-content: space-between;
 }
 

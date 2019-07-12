@@ -1,3 +1,4 @@
+
 $("#logo").click(function(){
     window.location = "../assets/index.html";
 });
@@ -115,8 +116,8 @@ $("body").on('click', 'button.minus', function(e){
     if(currentVal >= 1){  // can´t go lower than 0
 
         $(quantityInput).val(--currentVal);}
-    localStorage.setItem($(quantityInput).attr("sku"), currentVal);
-calPrice();
+          localStorage.setItem($(quantityInput).attr("sku"), currentVal);
+           calPrice();
 });
 
 
