@@ -92,8 +92,12 @@ function chargeOrder(nonce){
             $("fieldset").empty();
             $("fieldset").append("Thanks for the money!");
             console.log(response);
-        }
-        
+        },
+        error: function () {
+            $("fieldset").empty();
+            $("fieldset").append("ERROR");
+        },
+
      });
 }
 
