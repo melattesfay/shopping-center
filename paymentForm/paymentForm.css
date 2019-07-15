@@ -88,6 +88,7 @@ fieldset {
   background: linear-gradient(180deg,#8E72FF -57.14%,#6E4EEC 125%);
   border: none;
   color: #fff;
+  cursor: pointer;
 }
 
 .button-credit-card:hover {

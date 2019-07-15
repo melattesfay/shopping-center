@@ -1,6 +1,6 @@
 
 $("#logo").click(function(){
-    window.location = "../assets/homepage.html";
+    window.location = "../homepage/homepage.html";
 });
 $("#backBtn").click(function(){
     window.history.back();
@@ -66,8 +66,15 @@ var newTestDiv = $("<div class='wrapper'> </div>");
     newTestDiv.append(testWrapper);
     newTestDiv.append(pricePlace);
 
+    $(quantityInput).each(function(i, q){
+        if($(q).val() >= 1){
+            $("#content").prepend(newTestDiv);
+        }else{
+            $("#content").append(newTestDiv);
+        }
+    });
 
-   $("#content").append(newTestDiv);
+   //$("#content").append(newTestDiv);
 
 }
 
@@ -100,11 +107,13 @@ function calPrice(){
 $("body").on('click', 'button.plus', function(e){
 
     var parentDiv = $(e.target).parent();
+    var biggerParent = parentDiv.parent();
     var quantityInput = parentDiv.find("input.quantity")[0];
     var currentVal = $(quantityInput).val();
     $(quantityInput).val(++currentVal);
     localStorage.setItem($(quantityInput).attr("sku"), currentVal);
     calPrice();
+    $("#content").prepend(biggerParent);
 
 });
 
@@ -112,14 +121,18 @@ $("body").on('click', 'button.plus', function(e){
 
 $("body").on('click', 'button.minus', function(e){
     var parentDiv = $(e.target).parent();
+    var biggerParent = parentDiv.parent();
     var quantityInput = parentDiv.find("input.quantity")[0];
     var currentVal = $(quantityInput).val();
 
     if(currentVal >= 1){  // can´t go lower than 0
-
-        $(quantityInput).val(--currentVal);}
-          localStorage.setItem($(quantityInput).attr("sku"), currentVal);
-           calPrice();
+            $(quantityInput).val(--currentVal);
+        }
+        localStorage.setItem($(quantityInput).attr("sku"), currentVal);
+        calPrice();
+        if(currentVal == 0){
+            $("#content").append(biggerParent);
+        }
 });
 
 

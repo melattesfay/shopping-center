@@ -12,8 +12,8 @@
 }
 
 #logo{
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     margin-left: auto;
     margin-right: auto;
 
@@ -28,6 +28,10 @@
 #backBtn{
     width:100px;
     height:20px;
+}
+
+#backBtn:hover{
+    cursor: pointer;
 }
 
 #cartDiv{
@@ -122,6 +126,12 @@ Start of hover
   text-align: center;
   text-decoration: bold;
 }
+
+.text:hover{
+    cursor: pointer;
+}
+
+
 /*
 end of hover
 */
@@ -184,6 +194,9 @@ Modal and Tranparency ends header
     margin: auto;
 }
 
+.variationBtn:hover{
+    cursor: pointer;
+}
 
 
 .info{
