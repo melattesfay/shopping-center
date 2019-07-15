@@ -112,6 +112,7 @@ $("body").on('click', 'button.plus', function(e){
     $(quantityInput).val(++currentVal);
     localStorage.setItem($(quantityInput).attr("sku"), currentVal);
     calPrice();
+    $("#content").prepend(parentDiv);
 
 });
 
