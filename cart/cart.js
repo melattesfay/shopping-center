@@ -66,15 +66,14 @@ var newTestDiv = $("<div class='wrapper'> </div>");
     newTestDiv.append(testWrapper);
     newTestDiv.append(pricePlace);
 
-    findQuan();
-/*
-    if($(quantityInput.attr("sku")) > 0){
-        $("#content").prepend();
-    }else if($(quantityInput.attr("sku")) = 0){
-        $("#content").append();
-    }
+    $("input.quantity").each(function(i, q){
+        if($(q).val() >= 1){
+            $("#content").prepend(newTestDiv);
+        }else{
+            $("#content").append(newTestDiv);
+        }
+    });
 
-*/
    //$("#content").append(newTestDiv);
 
 }
@@ -136,16 +135,3 @@ $("body").on('click', 'button.minus', function(e){
 $("#checkout").click(function(){
     window.location = "../payment/payment.html";
 });
-
-
-function findQuan(){
-    $("input.quantity").each(function(i, q){
-        if($(q).val() >= 1){
-            $("#content").prepend(newTestDiv);
-        }else{
-            $("#content").append(newTestDiv);
-        }
-    });
-
-
-}
