@@ -107,12 +107,13 @@ function calPrice(){
 $("body").on('click', 'button.plus', function(e){
 
     var parentDiv = $(e.target).parent();
+    var biggerParent = parentDiv.parent();
     var quantityInput = parentDiv.find("input.quantity")[0];
     var currentVal = $(quantityInput).val();
     $(quantityInput).val(++currentVal);
     localStorage.setItem($(quantityInput).attr("sku"), currentVal);
     calPrice();
-    $("#content").prepend(parentDiv);
+    $("#content").prepend(biggerParent);
 
 });
 
