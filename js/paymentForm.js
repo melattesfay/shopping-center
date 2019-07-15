@@ -57,10 +57,11 @@ callbacks: {
         errors.forEach(function (error) {
             console.error('  ' + error.message);
         });
-        alert('Encountered errors, check browser developer console for more details');
+        alert('Could not proccess your card. Try again.');
         return;
     }
 
+    alert("Thanks for your money!")
     // Uncomment the following block to
     // 1. assign the nonce to a form field and
     // 2. post the form to the payment processing handler
@@ -88,13 +89,17 @@ function chargeOrder(nonce){
         contentType: "application/json",
         dataType: "json",
         success: function(response){
+            /*
             $("#form-container").empty();
             $("#form-container").append("<h1> Thanks for the money! </h1>");
             console.log(response);
+            */
         },
         error: function () {
+            /*
             $("#form-container").empty();
             $("#form-container").append("<h1> ERROR </h1>");
+            */
         },
 
      });
