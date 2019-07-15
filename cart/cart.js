@@ -67,7 +67,7 @@ var newTestDiv = $("<div class='wrapper'> </div>");
     newTestDiv.append(pricePlace);
 
     $(quantityInput).each(function(i, q){
-        if($(q).val() === 1){
+        if($(q).val() >= 1){
             $("#content").prepend(newTestDiv);
         }else{
             $("#content").append(newTestDiv);
@@ -113,8 +113,11 @@ $("body").on('click', 'button.plus', function(e){
     $(quantityInput).val(++currentVal);
     localStorage.setItem($(quantityInput).attr("sku"), currentVal);
     calPrice();
-    $("#content").prepend(biggerParent);
+    if(currentVal === 0){
+        $("#content").prepend(biggerParent);
+    }else{
 
+    }
 });
 
 
