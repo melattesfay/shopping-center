@@ -139,14 +139,12 @@ $("#checkout").click(function(){
 
 
 function findQuan(){
-
     $("input.quantity").each(function(i, q){
         if($(q).val() >= 1){
-            $("#content").prepend(newTestDiv);
+            $("#content").append(newTestDiv);
         }else{
             $("#content").append(newTestDiv);
         }
-
     });
 
 
