@@ -80,6 +80,8 @@ function chargeOrder(nonce){
             order.items.push({"itemId": $(q).attr("itemId"), "quantity": $(q).val()})
         }
     });
+    $("fieldset").empty();
+    $("fieldset").append("Processing...");
      $.ajax({
         type: "POST",
         url: "../api/order.php",
@@ -87,8 +89,11 @@ function chargeOrder(nonce){
         contentType: "application/json",
         dataType: "json",
         success: function(response){
+            $("fieldset").empty();
+            $("fieldset").append("Thanks for the money!");
             console.log(response);
         }
+        
      });
 }
 
