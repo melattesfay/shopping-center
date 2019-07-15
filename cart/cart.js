@@ -66,9 +66,9 @@ var newTestDiv = $("<div class='wrapper'> </div>");
     newTestDiv.append(testWrapper);
     newTestDiv.append(pricePlace);
 
-    if(quantityInput.attr("sku") > 0){
+    if($(quantityInput).attr("sku") > 0){
         $("#content").prepend();
-    }else if(quantityInput.attr("sku") <= 0){
+    }else if($(quantityInput).attr("sku") = 0){
         $("#content").append();
     }
 
