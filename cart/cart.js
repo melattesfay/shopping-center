@@ -121,14 +121,18 @@ $("body").on('click', 'button.plus', function(e){
 
 $("body").on('click', 'button.minus', function(e){
     var parentDiv = $(e.target).parent();
+    var biggerParent = parentDiv.parent();
     var quantityInput = parentDiv.find("input.quantity")[0];
     var currentVal = $(quantityInput).val();
 
     if(currentVal >= 1){  // can´t go lower than 0
-
-        $(quantityInput).val(--currentVal);}
-          localStorage.setItem($(quantityInput).attr("sku"), currentVal);
-           calPrice();
+            $(quantityInput).val(--currentVal);
+        }
+        localStorage.setItem($(quantityInput).attr("sku"), currentVal);
+        calPrice();
+        if(currentVal == 0){
+            $("#content").append(biggerParent);
+        }
 });
 
 
