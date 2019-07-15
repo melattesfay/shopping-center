@@ -66,7 +66,7 @@ var newTestDiv = $("<div class='wrapper'> </div>");
     newTestDiv.append(testWrapper);
     newTestDiv.append(pricePlace);
 
-    $("input.quantity").each(function(i, q){
+    $(quantityInput).each(function(i, q){
         if($(q).val() >= 1){
             $("#content").prepend(newTestDiv);
         }else{
