@@ -113,11 +113,10 @@ $("body").on('click', 'button.plus', function(e){
     $(quantityInput).val(++currentVal);
     localStorage.setItem($(quantityInput).attr("sku"), currentVal);
     calPrice();
-    if(currentVal === 0){
+    if(currentVal === 1){
         $("#content").prepend(biggerParent);
-    }else{
-
     }
+
 });
 
 
