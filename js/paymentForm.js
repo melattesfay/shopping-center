@@ -91,7 +91,9 @@ function chargeOrder(nonce){
         success: function(response){
 
             $("#form-container").empty();
+           
             $("#form-container").append("<h1> Thanks for the money! </h1>");
+            reset();
             console.log(response);
 
         },

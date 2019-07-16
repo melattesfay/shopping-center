@@ -1,7 +1,7 @@
-$("#sq-creditcard").click(function(){
+/*$("#sq-creditcard").click(function(){
   localStorage.setItem(variation.sku, 0);
 });
-
+*/
 $("#logo").click(function(){
     window.location = "../homepage/homepage.html";
 });
@@ -144,3 +144,8 @@ $("body").on('click', 'button.minus', function(e){
 $("#checkout").click(function(){
     window.location = "../payment/payment.html";
 });
+
+
+function reset(){
+    document.getElementsByClassName("quantity").innerHTML = 0;
+}
