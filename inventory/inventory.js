@@ -75,8 +75,8 @@ window.onload = function testToAppendImg(){
             $.each(response, function(index, item){
 			var newDiv = $("<div class='imgDiv1' class='itemContainer'></div");
             //give data attr to div so we can store the items data on the div and then use it later
-				//newDiv.append("<img class='items' src='" + item.image_url + "'>");
-				//newDiv.append("<div class='overlay'></div");
+				newDiv.append("<img class='items' src='" + item.image_url + "'>");
+				newDiv.append("<div class='overlay'></div");
 				newDiv.append("<div class='text'>" + "View Details" + "</div>");
                 newDiv.attr("itemData", JSON.stringify(item));
 				$('.content').append(newDiv);
