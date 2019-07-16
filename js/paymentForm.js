@@ -60,13 +60,9 @@ callbacks: {
         alert('Could not proccess your card. Try again.');
         return;
     }
-    
-    $(".quantity").val(0);
-    $("input.quantity").each(function(i, q){
-        localStorage.setItem($(q).attr("sku"), 0);
-    });
-    calPrice();
-    
+
+
+
     // Uncomment the following block to
     // 1. assign the nonce to a form field and
     // 2. post the form to the payment processing handler
@@ -95,12 +91,16 @@ function chargeOrder(nonce){
         contentType: "application/json",
         dataType: "json",
         success: function(response){
-        
+
             $("#form-container").empty();
             $("#form-container").append("<h1> Thanks for the money! </h1>");
             $("#form-container").append("<a href='../index.html'> Back to Home Page </a>");
             console.log(response);
-        
+   $(".quantity").val(0);
+    $("input.quantity").each(function(i, q){
+        localStorage.setItem($(q).attr("sku"), 0);
+    });
+    calPrice();
         },
         error: function () {
             $("#form-container").empty();
