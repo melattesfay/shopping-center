@@ -25,8 +25,7 @@ function onClick() {
 
   var data = getCatalog();
 
-function iosTesting(){
-$(document).on('click', '.text', function(e) {
+$('body').on('click', '.text', function(e) {
 	console.log(e);
 	Form();
     var parentDiv = $(e.target).parent();
@@ -62,7 +61,7 @@ $(document).on('click', '.text', function(e) {
     });
 
 });
-}
+
 
 window.onload = function testToAppendImg(){
     $(".content").empty();
