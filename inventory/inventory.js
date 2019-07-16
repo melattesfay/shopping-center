@@ -118,6 +118,10 @@ $(".close-button").click(function(){
     closeForm();
 });
 
+$(".items").click(function(){
+    Form();
+});
+
 /*
 */
 $("#addCart").click(function(){
