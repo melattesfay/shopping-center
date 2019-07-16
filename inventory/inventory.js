@@ -25,8 +25,8 @@ function onClick() {
 
   var data = getCatalog();
 
-
-$('anything').on('click', '.text', function(e) {
+function iosTesting(){
+$('body').on('click', '.text', function(e) {
 	console.log(e);
 	Form();
     var parentDiv = $(e.target).parent();
@@ -61,9 +61,9 @@ $('anything').on('click', '.text', function(e) {
             });
     });
 
-
-
 });
+}
+
 window.onload = function testToAppendImg(){
     $(".content").empty();
     $.ajax({
@@ -111,11 +111,11 @@ function closeForm(){
     $("#myDIV").show();
 }
 
-
+/*
 $(".text").click(function(){
     Form();
 });
-
+*/
 $(".close-button").click(function(){
     closeForm();
 });
