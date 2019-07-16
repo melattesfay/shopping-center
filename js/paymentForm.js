@@ -50,7 +50,6 @@ callbacks: {
     * Triggered when: SqPaymentForm completes a card nonce request
     */
     cardNonceResponseReceived: function (errors, nonce, cardData) {
-        chargeOrder(nonce);
     if (errors) {
         // Log errors from nonce generation to the browser developer console.
         console.error('Encountered errors:');
@@ -60,6 +59,8 @@ callbacks: {
         alert('Could not proccess your card. Try again.');
         return;
     }
+    chargeOrder(nonce);
+
 
     $(".quantity").val(0);
     $("input.quantity").each(function(i, q){
