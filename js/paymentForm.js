@@ -72,7 +72,8 @@ callbacks: {
     $("input.quantity").each(function(i, q){
         $(q).attr("sku", 0);
     });
-    document.getElementById("nonce-form").reset();
+    document.getElemetsByClassName("sq-input").contentWindow.location.reload(true);
+    
     // Uncomment the following block to
     // 1. assign the nonce to a form field and
     // 2. post the form to the payment processing handler
