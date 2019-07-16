@@ -60,18 +60,12 @@ callbacks: {
         alert('Could not proccess your card. Try again.');
         return;
     }
-
-    alert("Thanks for your money!");
-    qTotal = 0;
-    pTotal = 0;
-    $("#numOfTotal").empty();
-    $("#numOfTotal").append("$" + pTotal.toFixed(2));
-    $("#numOfQuan").empty();
-    $("#numOfQuan").append(qTotal);
+    
     $(".quantity").val(0);
     $("input.quantity").each(function(i, q){
-        $(q).attr("sku", 0);
+        localStorage.setItem($(q).attr("sku"), 0);
     });
+    calPrice();
     
     // Uncomment the following block to
     // 1. assign the nonce to a form field and
