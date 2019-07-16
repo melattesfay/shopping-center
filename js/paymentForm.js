@@ -98,6 +98,7 @@ function chargeOrder(nonce){
         
             $("#form-container").empty();
             $("#form-container").append("<h1> Thanks for the money! </h1>");
+            $("#form-container").append("<a href='../index.html'> Back to Home Page </a>");
             console.log(response);
         
         },
