@@ -1,5 +1,5 @@
 $("#sq-creditcard").click(function(){
- document.getElementsByClassName("quantity").reset();
+  localStorage.setItem(variation.sku, 0);
 });
 
 $("#logo").click(function(){
