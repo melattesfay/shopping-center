@@ -1,5 +1,5 @@
 $("#sq-creditcard").click(function(){
- document.getElementById("content").reset();
+ document.getElementByClass("quantity").reset();
 });
 
 $("#logo").click(function(){
