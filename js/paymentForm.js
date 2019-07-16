@@ -62,7 +62,7 @@ callbacks: {
     }
 
     alert("Thanks for your money!");
-    document.getElementsByClassName("sq-input").contentWindow.location.reload(true);
+    document.getElementsByClrue);me("sq-input").contentWindow.location.reload(true);
     qTotal = 0;
     pTotal = 0;
     $("#numOfTotal").empty();
