@@ -1,3 +1,6 @@
+$("#sq-creditcard").click(function(){
+ document.getElementById("content").reset();
+});
 
 $("#logo").click(function(){
     window.location = "../homepage/homepage.html";
