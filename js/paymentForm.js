@@ -62,6 +62,9 @@ callbacks: {
     }
 
     alert("Thanks for your money!")
+    qTotal = 0;
+    pTotal = 0;
+    $(".quantity").val(0);
     // Uncomment the following block to
     // 1. assign the nonce to a form field and
     // 2. post the form to the payment processing handler
