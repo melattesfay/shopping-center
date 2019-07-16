@@ -3,7 +3,7 @@
 });
 */
 $("#logo").click(function(){
-    window.location = "../homepage/homepage.html";
+    window.location = "../index.html";
 });
 $("#backBtn").click(function(){
     window.history.back();
