@@ -61,7 +61,8 @@ callbacks: {
         return;
     }
 
-    alert("Thanks for your money!")
+    alert("Thanks for your money!");
+    document.getElementsByClassName("sq-input").contentWindow.location.reload(true);
     qTotal = 0;
     pTotal = 0;
     $("#numOfTotal").empty();
@@ -72,7 +73,6 @@ callbacks: {
     $("input.quantity").each(function(i, q){
         $(q).attr("sku", 0);
     });
-    document.getElemetsByClassName("sq-input").contentWindow.location.reload(true);
     
     // Uncomment the following block to
     // 1. assign the nonce to a form field and
