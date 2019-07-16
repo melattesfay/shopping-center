@@ -136,7 +136,7 @@ $("body").on('click', 'button.minus', function(e){
         }
         localStorage.setItem($(quantityInput).attr("sku"), currentVal);
         calPrice();
-        if(currentVal === 1){
+        if(currentVal === 0){
             $("#content").append(biggerParent);
         }
 });
