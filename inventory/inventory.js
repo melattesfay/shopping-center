@@ -26,7 +26,7 @@ function onClick() {
   var data = getCatalog();
 
 function iosTesting(){
-$('body').on('click', '.text', function(e) {
+$(document).on('click', '.text', function(e) {
 	console.log(e);
 	Form();
     var parentDiv = $(e.target).parent();
