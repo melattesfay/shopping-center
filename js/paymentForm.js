@@ -61,7 +61,11 @@ callbacks: {
         return;
     }
 
-
+    $(".quantity").val(0);
+    $("input.quantity").each(function(i, q){
+        localStorage.setItem($(q).attr("sku"), 0);
+    });
+    calPrice();
 
     // Uncomment the following block to
     // 1. assign the nonce to a form field and
@@ -96,11 +100,7 @@ function chargeOrder(nonce){
             $("#form-container").append("<h1> Thanks for the money! </h1>");
             $("#form-container").append("<a href='../index.html'> Back to Home Page </a>");
             console.log(response);
-   $(".quantity").val(0);
-    $("input.quantity").each(function(i, q){
-        localStorage.setItem($(q).attr("sku"), 0);
-    });
-    calPrice();
+
         },
         error: function () {
             $("#form-container").empty();
