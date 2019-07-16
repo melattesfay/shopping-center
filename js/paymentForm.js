@@ -86,7 +86,8 @@ callbacks: {
 
 function chargeOrder(nonce){
     var order = {nonce: nonce, items:[]};
-
+    $("#form-container").empty();
+    $("#form-container").append("One moment we are processing your order");
     $("input.quantity").each(function(index, q){
         if(parseInt($(q).val()) > 0){
             order.items.push({"itemId": $(q).attr("itemId"), "quantity": $(q).val()})
@@ -100,11 +101,11 @@ function chargeOrder(nonce){
         contentType: "application/json",
         dataType: "json",
         success: function(response){
-        /*
+        
             $("#form-container").empty();
             $("#form-container").append("<h1> Thanks for the money! </h1>");
             console.log(response);
-        */
+        
         },
         error: function () {
         /*
