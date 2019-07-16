@@ -64,6 +64,10 @@ callbacks: {
     alert("Thanks for your money!")
     qTotal = 0;
     pTotal = 0;
+    $("#numOfTotal").empty();
+    $("#numOfTotal").append("$" + pTotal.toFixed(2));
+    $("#numOfQuan").empty();
+    $("#numOfQuan").append(qTotal);
     $(".quantity").val(0);
     // Uncomment the following block to
     // 1. assign the nonce to a form field and
