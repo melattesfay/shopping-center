@@ -103,10 +103,8 @@ function chargeOrder(nonce){
         
         },
         error: function () {
-        /*
             $("#form-container").empty();
             $("#form-container").append("<h1> ERROR! Refresh! </h1>");
-        */
         },
 
      });
