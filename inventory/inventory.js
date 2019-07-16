@@ -8,9 +8,11 @@ $("#cartpicture").click(function(){
 
 });
 
+/*
 $("#logo").click(function(){
     window.location = "../homepage/homepage.html";
 });
+*/
 
 var clicks = 0;
 function onClick() {
