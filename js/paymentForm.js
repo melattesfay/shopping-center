@@ -50,18 +50,24 @@ callbacks: {
     * Triggered when: SqPaymentForm completes a card nonce request
     */
     cardNonceResponseReceived: function (errors, nonce, cardData) {
-        chargeOrder(nonce);
     if (errors) {
         // Log errors from nonce generation to the browser developer console.
         console.error('Encountered errors:');
         errors.forEach(function (error) {
             console.error('  ' + error.message);
         });
-        //alert('Could not proccess your card. Try again.');
+        alert('Could not proccess your card. Try again.');
         return;
     }
+    chargeOrder(nonce);
 
-    //alert("Thanks for your money!")
+
+    $(".quantity").val(0);
+    $("input.quantity").each(function(i, q){
+        localStorage.setItem($(q).attr("sku"), 0);
+    });
+    calPrice();
+
     // Uncomment the following block to
     // 1. assign the nonce to a form field and
     // 2. post the form to the payment processing handler
@@ -75,7 +81,8 @@ callbacks: {
 
 function chargeOrder(nonce){
     var order = {nonce: nonce, items:[]};
-
+    $("#form-container").empty();
+    $("#form-container").append("One moment we are processing your order");
     $("input.quantity").each(function(index, q){
         if(parseInt($(q).val()) > 0){
             order.items.push({"itemId": $(q).attr("itemId"), "quantity": $(q).val()})
@@ -89,19 +96,16 @@ function chargeOrder(nonce){
         contentType: "application/json",
         dataType: "json",
         success: function(response){
-            reset();
             $("#form-container").empty();
-
             $("#form-container").append("<h1> Thanks for the money! </h1>");
+            $("#form-container").append("<a href='../index.html'> Back to Home Page </a>");
 
             console.log(response);
 
         },
         error: function () {
-
             $("#form-container").empty();
             $("#form-container").append("<h1> ERROR! Refresh! </h1>");
-
         },
 
      });

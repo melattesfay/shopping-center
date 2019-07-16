@@ -192,6 +192,9 @@ Modal and Tranparency ends header
 
 .variationBtn{
     margin: auto;
+    min-width: 20px;
+
+
 }
 
 .variationBtn:hover{
