@@ -5,6 +5,7 @@
 $("#logo").click(function(){
     window.location = "../index.html";
 });
+
 $("#backBtn").click(function(){
     window.history.back();
 });
@@ -135,7 +136,7 @@ $("body").on('click', 'button.minus', function(e){
         }
         localStorage.setItem($(quantityInput).attr("sku"), currentVal);
         calPrice();
-        if(currentVal == 0){
+        if(currentVal === 0){
             $("#content").append(biggerParent);
         }
 });

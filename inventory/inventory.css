@@ -18,13 +18,15 @@
     margin-right: auto;
 
 }
+
+/*
 #logo:hover{
     width: 250px;
     Height: 250px;
     cursor: pointer;
 }
 
-
+*/
 #backBtn{
     width:100px;
     height:20px;
@@ -125,13 +127,14 @@ Start of hover
   transform: translate(-50%, -50%);
   text-align: center;
   text-decoration: bold;
-  cursor:pointer;
+  cursor: pointer;
 }
 
+/*
 .text:hover{
     cursor: pointer;
 }
-
+*/
 
 /*
 end of hover

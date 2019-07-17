@@ -8,9 +8,11 @@ $("#cartpicture").click(function(){
 
 });
 
+/*
 $("#logo").click(function(){
     window.location = "../index.html";
 });
+*/
 
 var clicks = 0;
 function onClick() {
@@ -22,7 +24,6 @@ function onClick() {
 
 
   var data = getCatalog();
-
 
 $('body').on('click', '.text', function(e) {
 	console.log(e);
@@ -59,9 +60,9 @@ $('body').on('click', '.text', function(e) {
             });
     });
 
-
-
 });
+
+
 window.onload = function testToAppendImg(){
     $(".content").empty();
     $.ajax({
@@ -109,14 +110,15 @@ function closeForm(){
     $("#myDIV").show();
 }
 
-
+/*
 $(".text").click(function(){
     Form();
 });
-
+*/
 $(".close-button").click(function(){
     closeForm();
 });
+
 
 /*
 */
