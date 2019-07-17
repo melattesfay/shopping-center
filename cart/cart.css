@@ -5,7 +5,7 @@
     .visibledevice {display:block;}
     .visibledesktop {display:none;}
   .name{
-      font-size: 10%
+      font-size: 15%
   }
 }
 
@@ -65,7 +65,7 @@
 }
 
 #bottom{
-    display: flex;
+    display: block;
     width: 70%;
     justify-content: space-between;
 
