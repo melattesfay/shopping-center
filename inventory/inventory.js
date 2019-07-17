@@ -25,7 +25,7 @@ function onClick() {
 
   var data = getCatalog();
 
-$('body').on('click', '.text', function(e) {
+$('.text').on('click', function(e) {
 	console.log(e);
 	Form();
     var parentDiv = $(e.target).parent();
