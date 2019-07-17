@@ -3,7 +3,7 @@
 }
 @media (max-width : 1280px) {
     .visibledevice {display:block;}
-    .visibledesktop {display:none;}
+    .visibledesktop {display:block;}
   .name{
       font-size: 15%
   }
