@@ -10,7 +10,7 @@ $("#cartpicture").click(function(){
 
 /*
 $("#logo").click(function(){
-    window.location = "../homepage/homepage.html";
+    window.location = "../index.html";
 });
 */
 
