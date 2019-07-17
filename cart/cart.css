@@ -1,10 +1,12 @@
 .visibledevice {
     display:none;
-    }
+}
 @media (max-width : 320px) {
     .visibledevice {display:block;}
     .visibledesktop {display:none;}
+
 }
+
 
 
 #header{
