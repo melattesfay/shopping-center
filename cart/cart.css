@@ -1,6 +1,9 @@
 .visibledevice {
     display:none;
 }
+.visibledesktop{
+    display:none;
+}
 @media (max-width : 1280px) {
     .visibledevice {display:block;}
     .visibledesktop {display:block;}
