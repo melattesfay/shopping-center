@@ -1,21 +1,4 @@
-.visibledevice {
-    display:none;
-}
-.visibledesktop{
-    display:none;
-}
-@media (max-width : 880px) {
-    .visibledevice {display:block;}
 
-  .name{
-      font-size: 15%
-  }
-}
-@media(max-width: 30000px){
- .visibledesktop {
-     display:block;
- }
-}
 
 
 
