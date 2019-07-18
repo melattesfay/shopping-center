@@ -11,6 +11,7 @@
   #bottom{
       font-size: 7px;
       display:flex;
+      justify-content: flex-start;
 
   }
   #totalPrice{
