@@ -216,7 +216,6 @@ wrapper css
 
 
 
-
 @media (max-width : 900px) {
     .visibledevice {display:block;}
 
@@ -229,7 +228,7 @@ wrapper css
   #bottom{
       font-size: 7px;
       display:flex;
-       width: 9%;
+       width: 14%;
       }
  #totalQuantity{
      width:1px;
