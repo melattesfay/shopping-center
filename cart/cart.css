@@ -16,6 +16,7 @@
   #bottom{
       font-size: 7px;
       display:flex;
+      width:1px;
   }
   #totalQuantity{
        margin-left:auto;
