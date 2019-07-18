@@ -8,12 +8,12 @@
   #categories{
       font-size:9px;
   }
-  #bottom #totalQuantity{
+  #bottom{
       font-size: 7px;
       display:flex;
+      }
+#totalQuantity{
       justify-content: flex-start;
-      width:-100%;
-
   }
   #totalPrice{
        margin-left:-60px;
