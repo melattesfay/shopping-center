@@ -201,7 +201,7 @@ wrapper css
 }
 
 @media (max-width : 1780px) {
-     .visibledesktop {
+.visibledesktop {
          display:block;
 }
 #bottom{
@@ -228,7 +228,7 @@ wrapper css
   #bottom{
       font-size: 7px;
       display:flex;
-       width: 14%;
+       width: 200px;
       }
  #totalQuantity{
      width:1px;
