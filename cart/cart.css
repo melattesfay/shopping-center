@@ -19,7 +19,7 @@
 
   }
   #totalPrice{
-       margin-right:-500px;
+       justify-content:flex-start;
   }
 }
 
