@@ -8,7 +8,10 @@
     .visibledevice {display:block;}
 
   .name{
-      font-size: 15%
+      font-size: 15px;
+  }
+  #categories{
+      font-size:25px;
   }
 }
 
