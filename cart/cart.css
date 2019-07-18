@@ -16,6 +16,9 @@
   #bottom{
       font-size: 12px;
   }
+  #quantityNum{
+      margin-right:auto;
+  }
 }
 
 
