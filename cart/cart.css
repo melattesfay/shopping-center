@@ -18,8 +18,8 @@
       display:flex;
 
   }
-  #totalQuantity{
-       margin-left:auto;
+  #totalPrice{
+       margin-right:-500px;
   }
 }
 
