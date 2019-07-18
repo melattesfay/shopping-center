@@ -1,24 +1,4 @@
 
-@media (max-width : 900px) {
-    .visibledevice {display:block;}
-
-  .name{
-      font-size: 12px;
-  }
-  #categories{
-      font-size:9px;
-  }
-  #bottom{
-      font-size: 7px;
-      display:flex;
-      }
- #totalQuantity{
-      justify-content: flex-start;
-  }
-  #totalPrice{
-       margin-left:-60px;
-  }
-}
 
 @media (max-width : 11980px) {
  .visibledesktop {
@@ -218,4 +198,31 @@ wrapper css
      height:32px;
  }
 
+}
+
+
+
+
+
+@media (max-width : 900px) {
+    .visibledevice {display:block;}
+
+  .name{
+      font-size: 12px;
+  }
+  #categories{
+      font-size:9px;
+  }
+  #bottom{
+      font-size: 7px;
+      display:flex;
+       width: 9%;
+      }
+ #totalQuantity{
+     width:1px;
+      justify-content: flex-start;
+  }
+  #totalPrice{
+       margin-left:-60px;
+  }
 }
