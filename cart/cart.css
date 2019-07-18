@@ -23,8 +23,10 @@
   }
 }
 
-
-
+@media (max-width : 1180px) {
+ .visibledesktop {
+     display:block;
+    }
 #header{
     display: flex;
     flex-direction: column;
@@ -219,4 +221,4 @@ wrapper css
      height:32px;
  }
 
-
+}
