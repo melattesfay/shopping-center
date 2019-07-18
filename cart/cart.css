@@ -16,7 +16,7 @@
   #bottom{
       font-size: 7px;
       display:flex;
-      width:1px;
+
   }
   #totalQuantity{
        margin-left:auto;
@@ -79,9 +79,9 @@
 }
 
 #bottom{
-    display: block;
-    width: 70%;
-    justify-content: space-between;
+    display: flex;
+    /*width: 70%;
+    justify-content: space-between;*/
 
 }
 
