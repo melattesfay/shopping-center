@@ -17,8 +17,8 @@
       font-size: 12px;
       display:flex;
   }
-  #totalPrice{
-       margin-right:-600%;
+  #totalQuantity{
+       margin-right:auto;
   }
 }
 
