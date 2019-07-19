@@ -59,6 +59,14 @@
 
     </div>
 
+
+    <button class="open-button" onclick="openForm()">Open Form</button>
+
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+
+
+
         <div id="form-container">
       <div id="sq-ccbox">
         <form id="nonce-form" novalidate action="process-payment" method="post">
@@ -82,6 +90,11 @@
         </form>
       </div> <!-- end #sq-ccbox -->
      </div> <!-- end #form-container -->
+</div>
+
+
+   <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
 </div>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="cart.js"></script>

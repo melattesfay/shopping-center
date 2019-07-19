@@ -1,3 +1,13 @@
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+
+
 /*$("#sq-creditcard").click(function(){
   localStorage.setItem(variation.sku, 0);
 });

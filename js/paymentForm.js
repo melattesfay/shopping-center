@@ -98,7 +98,7 @@ function chargeOrder(nonce){
         success: function(response){
             $("#form-container").empty();
             $("#form-container").append("<h1> Thanks for the money! </h1>");
-            $("#form-container").append("<a href='../index.html'> Back to Home Page </a>");
+            $("#form-container").append("<button id='backLink'> <a href='../index.html'> Home Page </a> </button");
 
             console.log(response);
 
