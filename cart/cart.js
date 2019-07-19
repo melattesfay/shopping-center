@@ -1,13 +1,4 @@
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
-  document.getElementById("set").style.display = "none";
 
-}
-
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-   document.getElementById("set").style.display = "block";
-}
 
 
 
@@ -25,8 +16,7 @@ $("#backBtn").click(function(){
 
 
 window.onload = function itemVariations(){
-document.getElementById("btnCancel").style.display = "none";
-document.getElementById("myForm").style.display = "none";
+
       $("#content").empty();
      $.ajax({
         //url: "../api/api.json",
