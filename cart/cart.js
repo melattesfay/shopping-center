@@ -26,7 +26,7 @@ $("#backBtn").click(function(){
 
 window.onload = function itemVariations(){
 document.getElementById("btnCancel").style.display = "none";
-document.getElementById("form-container").style.display = "none";
+document.getElementById("myForm").style.display = "none";
       $("#content").empty();
      $.ajax({
         //url: "../api/api.json",
