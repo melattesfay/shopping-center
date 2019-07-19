@@ -2,10 +2,14 @@ function openForm() {
   document.getElementById("myForm").style.display = "block";
   document.getElementById("categories").style.display = "none";
   document.getElementById("content").style.display = "none";
+  document.getElementById("bottom").style.display = "none";
 }
 
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
+   document.getElementById("categories").style.display = "block";
+  document.getElementById("content").style.display = "block";
+  document.getElementById("bottom").style.display = "block";
 }
 
 
