@@ -1,17 +1,12 @@
 function openForm() {
   document.getElementById("myForm").style.display = "block";
-  document.getElementById("categories").style.display = "none";
-  document.getElementById("content").style.display = "none";
-  document.getElementById("bottom").style.display = "none";
+  document.getElementById("set").style.display = "none";
+
 }
 
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
-   document.getElementById("name").style.display = "block";
-   document.getElementById("quantity").style.display = "block";
-   document.getElementById("price").style.display = "block";
-
-
+   document.getElementById("set").style.display = "block";
 }
 
 
